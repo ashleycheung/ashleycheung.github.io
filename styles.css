@@ -1,0 +1,134 @@
+:root {
+  --primary: #F05454;
+  --secondary: #FFFFFF;
+  --background: #222831;
+  --text: #DDDDDD;
+}
+.top-banner {
+  padding: 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--primary);
+}
+.banner-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 600;
+  font-size: 2em;
+  color: var(--background);
+}
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.nav-item {
+  margin-left: 1em;
+  font-size: 2em;
+  font-weight: 600;
+  color: var(--background);
+  text-decoration: none;
+}
+.landing-page {
+  padding-top: 2em;
+  background-image: linear-gradient(170deg, var(--primary) 50%,
+    var(--background) 50%);
+}
+.slide {
+  padding: 5em;
+}
+body {
+  margin: 0px;
+  background-color: var(--background);
+  font-family: 'Open Sans', sans-serif;
+}
+h1 {
+  font-size: 5em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  color: var(--secondary);
+}
+h2 {
+  font-size: 3em;
+  color: var(--secondary);
+}
+.heading-number {
+  color: var(--primary);
+  margin-right: 1em;
+}
+div {
+  color: var(--text);
+}
+.catchline {
+  font-size: 3em;
+  color: var(--text);
+}
+.profile-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-img {
+  max-width: 25em;
+  width: 100%;
+  border-radius: 50%;
+  border: 1em solid var(--background);
+}
+.info-text {
+  font-size: 1.5em;
+}
+.projects-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+.project-wrapper {
+  background-color: #EEEEEE;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 1em;
+  margin: 1em;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+.project-wrapper:hover {
+  transform: scale(1.05);
+}
+.project-title {
+  color: var(--background);
+  font-size: 2em;
+  text-align: center;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+.project-thumbnail {
+  width: 100%;
+  height: 15em;
+  object-fit: contain;
+}
+.project-desc {
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  color: var(--background);
+}
+.project-techs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.project-tech-label {
+  background-color: var(--primary);
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  padding-right: 1em;
+  padding-left: 1em;
+  border-radius: 0.3em;
+  margin: 0.3em;
+  font-weight: 600;
+}

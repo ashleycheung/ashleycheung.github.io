@@ -1,0 +1,43 @@
+[
+  {
+    "title" : "Battle Room",
+    "desc" : "A dungeon crawler with procedural map generation utilising the Godot Game Engine",
+    "thumbnailSrc" : "/images/battleroom.png",
+    "projectSrc" : "https://ashleycheung.itch.io/battleroom",
+    "technologies" : [
+      "Godot"
+    ]
+  },
+  {
+    "title" : "Hymn Finder",
+    "desc" : "A web application that searches for hymns given a specific bible verse. It utilises React and the hymnary API.",
+    "thumbnailSrc" : "/images/hymnFinder.png",
+    "projectSrc" : "https://ashleycheung.github.io/hymnfinder/",
+    "technologies" : [
+      "React",
+      "Javascript",
+      "CSS",
+      "HTML"
+    ]
+  },
+  {
+    "title" : "Diep.io Bot",
+    "desc" : "A bot that uses computer vision to play the game Diep.io. It utilises Python and OpenCV.",
+    "thumbnailSrc" : "/images/diepio.gif",
+    "projectSrc" : "https://github.com/ashleycheung/DiepIO-Bot",
+    "technologies" : [
+      "Python",
+      "OpenCV"
+    ]
+  },
+  {
+    "title" : "Tetris",
+    "desc" : "A clone of the popular game Tetris, using the Python Library Pygame.",
+    "thumbnailSrc" : "/images/tetris.gif",
+    "projectSrc" : "https://github.com/ashleycheung/Tetris-Clone",
+    "technologies" : [
+      "Python",
+      "PyGame"
+    ]
+  }
+]
