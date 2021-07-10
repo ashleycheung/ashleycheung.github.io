@@ -1,8 +1,12 @@
 :root {
-  --primary: #F05454;
-  --secondary: #FFFFFF;
+  --primary: #FF5722;
+  --secondary: #EEEEEE;
   --background: #222831;
-  --text: #DDDDDD;
+  --text: #EEEEEE;
+}
+.highlight {
+  color: var(--primary);
+  font-weight: 600;
 }
 .top-banner {
   padding: 3em;
@@ -87,7 +91,7 @@ div {
   width: 100%;
 }
 .project-wrapper {
-  background-color: #EEEEEE;
+  background-color: var(--text);
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -106,6 +110,7 @@ div {
   text-align: center;
   margin-top: 0.25em;
   margin-bottom: 0.25em;
+  font-weight: 600;
 }
 .project-thumbnail {
   width: 100%;
