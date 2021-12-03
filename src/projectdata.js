@@ -17,7 +17,7 @@ export const DATA = {
       "desc" : `A real-time virtual queue application built using the Socket.io library.
       `,
       "thumbnailSrc" : "/assets/virtualQueue.png",
-      "projectSrc" : "https://ashleycheung.github.io/flow-forms/",
+      "projectSrc" : "https://ashleycheung.github.io/virtual-queue/",
       "technologies" : [
         "React",
         "Javascript",
@@ -86,7 +86,7 @@ export const DATA = {
       "title" : "HyStats",
       "desc" : "A web application to view statistics from Minecraft Hypixel",
       "thumbnailSrc" : "/assets/hystats.png",
-      "projectSrc" : "https://github.com/ashleycheung/DiepIO-Bot",
+      "projectSrc" : "https://github.com/ashleycheung/Hystats/",
       "technologies" : [
         "React",
         "Javascript"
