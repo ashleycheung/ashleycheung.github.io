@@ -12,21 +12,21 @@
   <!-- Navigation header -->
   <div class="header header-hide">
     <div class="logo">
-      <div class="hex">
+      <a href="#landing-page" class="hex">
         A
-      </div>
+      </a>
     </div>
     <div class="nav">
       <a href="#about-me" class="nav-item">About</a>
       <a href="#experience" class="nav-item">Experience</a>
       <a href="#projects" class="nav-item">Projects</a>
-      <a class="nav-item">Contact</a>
+      <a href="#contact" class="nav-item">Contact</a>
     </div>
     <script src="/src/header.js"></script>
   </div>
   
   <!--Landing page-->
-  <div class="landing-page">
+  <div id="landing-page" class="landing-page">
     <div class="canvas-wrapper">
       <div class="canvas-text">
         <div class="canvas-title">
@@ -43,6 +43,9 @@
       </div>
       <canvas id="landing-threejs"></canvas>
     </div>
+    <a class="hidden-link" href="#about-me">
+      <img class="landing-arrow" src="assets/arrow.svg" alt="arrow-btn">
+    </a>
     <script src="/lib/three.js"></script>
     <script src="/src/landing.js"></script>
   </div>
@@ -102,6 +105,12 @@
     <h3 class="center-title">Other noteworthy projects</h2>
     <div id="project-regular"></div>
     <script type="module" src="/src/projects.js"></script>
+  </div>
+  
+  <div id="contact" class="page alt-page">
+    <h2 class="center-title">Get In Touch</h2>
+    <div class="contact-text">Want to contact me? Chuck me an email!</div>
+    <div class="email">ashleycheung2412@gmail.com</div>
   </div>
   
   <div class="footer">

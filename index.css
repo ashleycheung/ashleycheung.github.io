@@ -76,6 +76,7 @@ body {
 */
 
 .hex {
+  text-decoration: none;
   cursor: pointer;
   transition: color 0.5s;
   transition: background-color 0.5s;
@@ -152,6 +153,7 @@ body {
 */
 
 .landing-page {
+  position: relative;
   background-color: var(--canvas-bg);
   width: 100%;
   height: 100vh;
@@ -208,6 +210,29 @@ body {
 .canvas-btn-link {
   text-decoration: none;
   color: var(--canvas-bg);
+}
+
+.landing-arrow {
+  width: 25px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
 
 /* 
@@ -267,18 +292,20 @@ body {
 
 .project-featured-list {
   margin-top: 2.5rem;
-  margin-left: 7.5rem;
-  margin-right: 7.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .project-featured-wrapper {
   display: flex;
   align-items: center;
   margin-bottom: 5rem;
+  width: clamp(1500px, 1500px, 100%);
 }
 
 .project-featured-thumbnail {
-  width: 50vw;
+  width: clamp(750px, 750px, 50vh);
   object-fit: contain;
   cursor: pointer;
   transition: transform 0.2s;
@@ -443,6 +470,26 @@ body {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
+}
+
+/* 
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+                                      CONTACT
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+*/
+
+.contact-text {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 3rem;
+}
+
+.email {
+  font-size: 3rem;
 }
 
 /* 
