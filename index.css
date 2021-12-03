@@ -1,0 +1,486 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #fefefe;
+  --canvas-bg: #F5F8FA;
+  --dark-bg: #1B242F;
+  --lighter-dark-bg: #26313f;
+  --primary: #46C2C9;
+  --dark-primary: #4bb7bd;
+  --text: #444649;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+h2 {
+  font-size: 3rem;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+body {
+  color: var(--text);
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* 
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+                                        MISC
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+*/
+
+.body-text {
+  font-size: 1.5rem;
+}
+
+.center-title {
+  text-align: center;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg);
+  padding-bottom: 5rem;
+}
+
+.page.alt-page {
+  background-color: var(--canvas-bg);
+}
+
+/* 
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+                                        HEADER
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+*/
+
+.hex {
+  cursor: pointer;
+  transition: color 0.5s;
+  transition: background-color 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  width: 65px;
+  height: 56.29px; /* width * 0.866 */
+  color: var(--bg);
+  background-color: var(--primary);
+  clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+  -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+  -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+}
+
+.hex:hover {
+  background-color: var(--bg);
+  color: var(--primary);
+}
+
+.header {
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+  top: 0; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.header-hide {
+  transform: scaleY(0);
+  overflow: hidden;
+}
+
+.header-show {
+  transform: scaleY(1);
+}
+
+.logo {
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.nav {
+  display: flex;
+  cursor: pointer;
+}
+
+.nav-item {
+  color: var(--dark-bg);
+  padding: 2rem;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  color: var(--primary);
+}
+
+/* 
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+                                        LANDING PAGE
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+*/
+
+.landing-page {
+  background-color: var(--canvas-bg);
+  width: 100%;
+  height: 100vh;
+}
+
+#landing-threejs {
+  margin: 0px;
+}
+
+.canvas-wrapper {
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.canvas-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;  /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+  transform: translate(-50%, -50%);
+}
+
+.canvas-title {
+  color: #1B242F; 
+  font-size: 6rem;
+  font-weight: 600;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.canvas-subtitle {
+  font-size: 2.5rem;
+}
+
+.canvas-btn {
+  margin-top: 2rem;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: var(--dark-bg);
+  color: var(--bg);
+  padding: 1rem;
+  transition: background-color 0.2s;
+}
+
+.canvas-btn:hover {
+  background-color: var(--text);
+}
+
+.canvas-btn-link {
+  text-decoration: none;
+  color: var(--canvas-bg);
+}
+
+/* 
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+                                        ABOUT ME
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+*/
+
+.about-me-page {
+  padding: 5rem;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
+.about-me-content {
+  min-width: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-me-text {
+  padding: 2rem;
+}
+
+.profile-img {
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 400px;
+  height: 346.4px; /* width * 0.866 */
+  color: var(--bg);
+  background-color: var(--primary);
+  clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+  -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+  -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+}
+
+/* 
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+                                        PROJECTS FEATURED
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+*/
+
+#project-featured {
+  width: 100%;
+}
+
+.project-featured-list {
+  margin-top: 2.5rem;
+  margin-left: 7.5rem;
+  margin-right: 7.5rem;
+}
+
+.project-featured-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.project-featured-thumbnail {
+  width: 50vw;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.project-featured-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.project-featured-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.project-featured-title {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: var(--dark-bg);
+  margin-bottom: 0.5rem;
+}
+
+.project-featured-tech-list {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.project-featured-desc {
+  z-index: 99;
+  width: 110%;
+  color: var(--canvas-bg);
+  background-color: var(--lighter-dark-bg);
+  padding: 1rem;
+  text-align: center;
+}
+
+/* 
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+                                        PROJECTS REGULAR
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+*/
+
+#project-regular {
+  width: 100%;
+}
+
+.project-selector {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.project-selector-btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 0.2rem;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  background-color: var(--dark-bg);
+  color: var(--bg);
+  width: 10%;
+  transition: background-color 0.2s;
+}
+
+.project-selector-btn:hover {
+  background-color: var(--text);
+}
+
+.project-selector-btn.project-selector-btn-active {
+  background-color: var(--primary);
+  color: var(--dark-bg);
+}
+
+.project-selector-btn.project-selector-btn-active:hover {
+  background-color: var(--dark-primary);
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0.5rem;
+  background-color: var(--dark-bg);
+  bottom: 0px;
+  transition: bottom 0.2s;
+  cursor: pointer;
+  position: relative;
+  -webkit-animation: fade-in-fwd 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-fwd 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.project-wrapper:hover {
+  bottom: 0.5rem;
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-in-fwd
+ * ----------------------------------------
+ */
+ @-webkit-keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+
+
+.project-thumbnail {
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  color: var(--canvas-bg);
+  font-weight: 600;
+  padding: 1rem;
+  padding-bottom: 0px;
+}
+
+.project-desc {
+  padding: 1rem;
+  color: #f5f8faaf;
+}
+
+.project-tech-list {
+  color: var(--primary);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+}
+
+/* 
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+                                        FOOTER 
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+*/
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  background-color: var(--dark-bg);
+}
+
+.footer-name {
+  color: var(--bg);
+}
+
+.social-btn {
+  width: 50px;
+  height: 50px;
+  filter: invert(100%);
+  padding: 0.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.hidden-link {
+  text-decoration: none;
+}
+
+.copyright {
+  color: var(--primary);
+}

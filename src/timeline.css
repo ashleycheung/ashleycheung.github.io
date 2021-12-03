@@ -2,10 +2,15 @@
   box-sizing: border-box;
 }
 
+.timeline-wrapper {
+  width: 100%;
+}
+
 .timeline-heading {
-  color: var(--background);
+  color: var(--canvas-bg);
   font-size: 2em;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .timeline-date {
@@ -48,7 +53,7 @@
   width: 25px;
   height: 25px;
   right: -17px;
-  background-color: var(--text);
+  background-color: var(--dark-bg);
   border: 4px solid var(--primary);
   top: 15px;
   border-radius: 50%;
@@ -101,10 +106,9 @@
 /* The actual content */
 .content {
   padding: 20px 30px;
-  color: var(--background);
-  background-color: var(--text);
+  color: #f5f8faaf;
+  background-color: var(--dark-bg);
   position: relative;
-  border-radius: 6px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */

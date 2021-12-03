@@ -1,43 +1,70 @@
 <head>
+  <title>Ashley Cheung</title>
+  <link rel="icon" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="src/timeline.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="timeline.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <div class="top-banner">
-    <div class="banner-logo">Ashley Cheung</div>
-    <div class="top-nav">
-      <a href="#about-me" class="nav-item">1. About Me</a>
-      <a href="#education" class="nav-item">2. Education</a>
-      <a href="#personal-projects" class="nav-item">3. Personal Projects</a>
-    </div>
-  </div>
-  <div class="landing-page">
-    <div class="slide">
-      <div class="profile-page-wrapper">
-        <img class="profile-img" src="/images/profile.jpg"/>
-        <h1>Ashley Cheung</h1>
-        <div class="catchline">An aspiring engineer, and software developer</div>
+  
+  <!-- Navigation header -->
+  <div class="header header-hide">
+    <div class="logo">
+      <div class="hex">
+        A
       </div>
     </div>
+    <div class="nav">
+      <a href="#about-me" class="nav-item">About</a>
+      <a href="#experience" class="nav-item">Experience</a>
+      <a href="#projects" class="nav-item">Projects</a>
+      <a class="nav-item">Contact</a>
+    </div>
+    <script src="/src/header.js"></script>
   </div>
-  <div id="about-me" class="slide">
-    <div class="about-page-wrapper">
-      <h2><span class="heading-number">1.</span> About Me</h2>
-      <div class="info-text">
-        I am an aspiring engineer, and currently a student at UNSW studying
-        mechatronics engineering and computer science.
-        In my spare time, I love to tinker around with code and make fun projects!
+  
+  <!--Landing page-->
+  <div class="landing-page">
+    <div class="canvas-wrapper">
+      <div class="canvas-text">
+        <div class="canvas-title">
+          Ashley Cheung
+        </div>
+        <div class="canvas-subtitle">
+          Software and Mechatronics Engineer
+        </div>
+        <button class="canvas-btn">
+          <a class="canvas-btn-link" href="#projects">
+            View my projects
+          </a>
+        </button>
+      </div>
+      <canvas id="landing-threejs"></canvas>
+    </div>
+    <script src="/lib/three.js"></script>
+    <script src="/src/landing.js"></script>
+  </div>
+  
+  <!--About me-->
+  <div id="about-me" class="about-me-page page">
+    <h2 class="center-title">About Me</h2>
+    <div class="about-me-content">
+      <img class="profile-img" src="/assets/profile.jpg"/>
+      <div class="body-text about-me-text">
+        I am an aspiring engineer, and currently a student at UNSW
+        studying mechatronics engineering and computer science. In my
+        spare time, I love to tinker around with code and make fun projects!
         In my downtimes, I love to go for runs and cycle at the park!
       </div>
     </div>
   </div>
-  <div id="education" class="slide">
-    <div class="education-page-wrapper">
-      <h2><span class="heading-number">2.</span> Education</h2>
+  
+  <!--Timeline-->
+  <div id="experience" class="page alt-page">
+    <h2 class="center-title">Experience</h2>
+    <div class="timeline-wrapper">
       <div class="timeline">
         <div class="container left">
           <div class="content">
@@ -45,7 +72,7 @@
             <div class="timeline-date">2019 - Now</div>
             <p>Engineering (Mechatronics) / Computer Science</p>
             <p>Included on the
-              <span class="highlight">2020 UNSW Dean's Honour's list</span>
+              <span class="highlight">2020 UNSW Dean"s Honour"s list</span>
             </p>
             <p>High Distinction WAM of <span class="highlight">85.88</span></p>
           </div>
@@ -67,9 +94,35 @@
       </div>
     </div>
   </div>
-  <div id="personal-projects" class="slide">
-    <h2><span class="heading-number">3.</span>Personal Projects</h2>
-    <div id="projects"></div>
+  
+  <!--Projects-->
+  <div id="projects" class="page">
+    <h2 class="center-title">Projects</h2>
+    <div id="project-featured"></div>
+    <h3 class="center-title">Other noteworthy projects</h2>
+    <div id="project-regular"></div>
+    <script type="module" src="/src/projects.js"></script>
   </div>
-  <script src="/portfolio.js"></script>
+  
+  <div class="footer">
+    <div class="social-container">
+      <a class="hidden-link" target="_blank" rel="noopener noreferrer"
+        href="https://www.instagram.com/ashley_cheung24/">
+        <img class="social-btn" src="assets/instagram-brands.svg" alt="instagram">
+      </a>
+      <a class="hidden-link" target="_blank" rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/ashley-cheung-209698177/">
+        <img class="social-btn" src="assets/linkedin-in-brands.svg" alt="linked in">
+      </a>
+      <a class="hidden-link" target="_blank" rel="noopener noreferrer"
+        href="https://github.com/ashleycheung">
+        <img class="social-btn" src="assets/github-brands.svg" alt="github">
+      </a>
+    </div>
+    <div class="footer-name">ASHLEY CHEUNG
+      <span class="copyright">
+        © 2021
+      </span>
+    </div>
+  </div>
 </body>
