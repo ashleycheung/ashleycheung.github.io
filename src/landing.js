@@ -1,6 +1,6 @@
 
 // Renders the three js background
-function makeThreeJs() {
+async function makeThreeJs() {
   const scene = new THREE.Scene();
   scene.background = new THREE.Color( 0xF5F8FA );
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
