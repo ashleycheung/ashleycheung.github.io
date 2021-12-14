@@ -49,8 +49,9 @@ function renderRegularProjects(tag = 'all') {
         onclick: () => window.open(project.projectSrc, '_blank').focus(),
         children: [
           e('img', {
-            class: 'project-thumbnail',
-            src: project.thumbnailSrc
+            class: 'project-thumbnail lazy-load',
+            'data-src': project.thumbnailSrc,
+            loading: 'lazy',
           }),
           e('div', {
             class: 'project-title',
@@ -87,8 +88,8 @@ function renderFeaturedProjects() {
       class: 'project-featured-wrapper',
       children: [
         e('img', {
-          class: 'project-featured-thumbnail',
-          src: project.thumbnailSrc,
+          class: 'project-featured-thumbnail lazy-load',
+          'data-src': project.thumbnailSrc,
           onclick: () => window.open(project.projectSrc, '_blank').focus(),
         }),
         e('div', {
