@@ -8,6 +8,7 @@ function createLazyLoad () {
         if (e.isIntersecting) {
           l.src = l.getAttribute('data-src');
           observer.unobserve(l);
+          l.classList.add('lazy-loaded');
         }
       });
     });

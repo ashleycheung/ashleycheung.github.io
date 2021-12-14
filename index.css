@@ -65,6 +65,17 @@ body {
   background-color: var(--canvas-bg);
 }
 
+.lazy-load {
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.lazy-load.lazy-loaded {
+  opacity: 1.0;
+}
+
 /* 
 ///////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -433,7 +444,7 @@ body {
   width: clamp(750px, 750px, 50vh);
   object-fit: contain;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.2s, opacity 1s;
 }
 
 .project-featured-thumbnail:hover {
