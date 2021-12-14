@@ -1,4 +1,5 @@
 import { elem as e } from './helper.js';
+import { createLazyLoad } from './loader.js';
 import { DATA } from './projectdata.js';
 
 function ProjectSelector (renderProjects, tag) {
@@ -77,6 +78,8 @@ function renderRegularProjects(tag = 'all') {
       children: projChildren,
     })
   );
+  // Lazy Load
+  createLazyLoad();
 }
 
 function renderFeaturedProjects() {

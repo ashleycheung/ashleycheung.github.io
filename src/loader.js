@@ -1,4 +1,4 @@
-function createLazyLoad () {
+export function createLazyLoad () {
   const lazyElems = document.getElementsByClassName('lazy-load');
   for (const l of lazyElems) {
     // Load element
