@@ -13,6 +13,19 @@ export const DATA = {
       ]
     },
     {
+      "title" : "Stock Overflow",
+      "desc" : `A stocks portfolio web app. A University Capstone project.
+      `,
+      "thumbnailSrc" : "/assets/stockOverflow.png",
+      "projectSrc" : "https://stock-overflow-frontend.vercel.app/",
+      "technologies" : [
+        "React",
+        "Javascript",
+        "NodeJS",
+        "MongoDB"
+      ]
+    },
+    {
       "title" : "Virtual Queue",
       "desc" : `A real-time virtual queue application built using the Socket.io library.
       `,
