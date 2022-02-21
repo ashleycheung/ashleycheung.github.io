@@ -26,6 +26,17 @@ export const DATA = {
       ]
     },
     {
+      "title" : "Doggo Run",
+      "desc" : `A web browser game made for mobile.
+      `,
+      "thumbnailSrc" : "/assets/doggoRun.png",
+      "projectSrc" : "https://doggo-run.vercel.app/",
+      "technologies" : [
+        "Javascript",
+        "ThreeJS",
+      ]
+    },
+    {
       "title" : "Virtual Queue",
       "desc" : `A real-time virtual queue application built using the Socket.io library.
       `,
