@@ -1,5 +1,18 @@
 
-export const DATA = {
+type Project = {
+  title: string;
+  desc: string;
+  thumbnailSrc: string;
+  projectSrc: string;
+  technologies: Array<string>
+}
+
+type PortfolioProjects = {
+  featuredProjects: Array<Project>;
+  projects: Array<Project>;
+}
+
+export const DATA: PortfolioProjects = {
   "featuredProjects" : [
     {
       "title" : "Flow Forms",
