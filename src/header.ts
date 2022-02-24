@@ -68,8 +68,8 @@ export class Header extends Component {
               }),
               e('a', {
                 class: 'header-mobile-nav-item',
-                href: '#experience',
-                innerText: 'Experience',
+                href: '#education',
+                innerText: 'Education',
                 onclick: () => this.hideMobileNav(),
               }),
               e('a', {
@@ -109,8 +109,8 @@ export class Header extends Component {
             }),
             e('a', {
               class: 'header-nav-item',
-              href: '#experience',
-              innerText: 'Experience'
+              href: '#education',
+              innerText: 'Education'
             }),
             e('a', {
               class: 'header-nav-item',

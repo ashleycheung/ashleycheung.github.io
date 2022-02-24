@@ -19,15 +19,10 @@ export class LandingPage extends Component {
               class: 'landing-canvas-subtitle',
               innerText: 'Software and Mechatronics Engineer'
             }),
-            e('button', {
+            e('a', {
               class: 'landing-canvas-btn',
               innerText: 'View my projects',
-              children: [
-                e('a', {
-                  class: 'landing-canvas-btn-link',
-                  href: '#projects'
-                })
-              ]
+              href: '#projects'
             })
           ]
         }),
@@ -35,7 +30,18 @@ export class LandingPage extends Component {
           width: window.innerWidth,
           height: window.innerHeight,
           class: "landing-canvas"
-        })  
+        }),
+        e('a', {
+          class: 'hidden-link landing-arrow-link',
+          href: '#about-me',
+          children: [
+            e('img', {
+              class: 'landing-arrow',
+              src: 'assets/arrow.svg',
+              alt: "arrow-btn"
+            })
+          ]
+        })
       ]
     })
   }

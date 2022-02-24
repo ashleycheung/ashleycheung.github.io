@@ -1,5 +1,5 @@
 import { Component } from "./component";
-import { createHTMLElement as e, isMobile } from './helper';
+import { createHTMLElement as e, isMobile, replaceChildren } from './helper';
 import { createLazyLoad } from "./loader";
 import { DATA } from "./projectdata";
 
@@ -14,19 +14,28 @@ export class Projects extends Component {
           innerText: 'Projects'
         }),
         this._createFeaturedProjects(),
+        e('h2', {
+          class: 'center-title',
+          innerText: 'Other noteworthy projects'
+        }),
+        this._createRegularProjects()
       ]
     })
   }
   
   private _createProjectSelector(renderProjects: any, tag: string): HTMLElement {
     const onClick = (e: any) => {
-      renderProjects(e.target.innerText);
+      replaceChildren(
+        document.getElementById('project-regular-wrapper')!,
+        renderProjects(e.target.innerText)
+      )
+      createLazyLoad();
     }
     const className = (t: any) => t.toLowerCase() === tag.toLowerCase() ? 
-      `project-selector-btn project-selector-btn-active` : 
-      'project-selector-btn';
+      `project-regular-selector-btn project-regular-selector-btn-active` : 
+      'project-regular-selector-btn';
     return e('div', {
-      'class': 'project-selector',
+      'class': 'project-regular-selector',
       children: [
         e('button', {
           class: className('all'),
@@ -57,44 +66,41 @@ export class Projects extends Component {
       // Only render if all is selected or correct tag
       if (tagLower === 'all' || lowerTech.includes(tagLower)) {
         projChildren.push(e('div', {
-          class: 'project-wrapper',
+          class: 'project-regular-project-wrapper',
           onclick: () => window.open(project.projectSrc, '_blank')!.focus(),
           children: [
             e('img', {
-              class: 'project-thumbnail lazy-load',
+              class: 'project-regular-thumbnail lazy-load',
               'data-src': project.thumbnailSrc,
               loading: 'lazy',
             }),
             e('div', {
-              class: 'project-title',
+              class: 'project-regular-title',
               innerText: project.title
             }),
             e('div', {
-              class: 'project-tech-list',
+              class: 'project-regular-tech-list',
               innerText: project.technologies.reduce((p,c) => `${p} / ${c}`)
             }),
             e('div', {
-              class: 'project-desc',
+              class: 'project-regular-desc',
               innerText: project.desc
             }),
           ]
         }))
       }
     }
-    // // Add to rootDiv
-    // rootDiv.replaceChildren(
-    //   this._createRegularProjects(this.renderRegularProjects, tag),
-    //   e('div', {
-    //     class: 'project-list',
-    //     children: projChildren,
-    //   })
-    // );
-    
-    
-    // // Lazy Load
-    // createLazyLoad();
+
     return e('div', {
-      class: 'project-regular-wrapper'
+      id: 'project-regular-wrapper',
+      class: 'project-regular-wrapper',
+      children: [
+        this._createProjectSelector(this._createRegularProjects.bind(this), tag),
+        e('div', {
+          class: 'project-regular-list',
+          children: projChildren
+        })
+      ]
     })
   }
   

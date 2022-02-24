@@ -50,20 +50,24 @@ export function createHTMLElement(name: string, attributes: Attributes): HTMLEle
 
 export function replaceChildren(root: HTMLElement, children: any): void {
   // For older browsers that dont have replace children
-  if (root.replaceChildren === undefined) {
-    for (const c of root.children) {
-      root.removeChild(c);
-    }
-    if (children !== null) {
-      root.appendChild(children);
-    }
-  } else {
-    if (children !== null) {
-      root.replaceChildren(children);
-    } else {
-      root.replaceChildren();
-    }
+  // if (root.replaceChildren === undefined) {
+  //   for (const c of root.children) {
+  //     root.removeChild(c);
+  //   }
+  //   if (children !== null) {
+  //     root.appendChild(children);
+  //   }
+  // } else {
+  //   if (children !== null) {
+  //     root.replaceChildren(children);
+  //   } else {
+  //     root.replaceChildren();
+  //   }
+  // }
+  while(root.firstChild) {
+    root.removeChild(root.firstChild);
   }
+  root.appendChild(children);
 }
 
 /**
