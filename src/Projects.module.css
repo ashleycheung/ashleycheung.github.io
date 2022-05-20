@@ -63,6 +63,8 @@
   border-radius: 1rem;
   object-fit: cover;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+  transition: transform .2s;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
    -khtml-user-select: none; /* Konqueror HTML */
@@ -70,6 +72,10 @@
       -ms-user-select: none; /* Internet Explorer/Edge */
           user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome, Edge, Opera and Firefox */
+}
+
+.featuredProjectImg:hover {
+  transform: scale(1.02);
 }
 
 .featuredProjectTechList {
@@ -160,6 +166,7 @@
 }
 
 .selectedProjectImg {
+  composes: featuredProjectImg;
   width: min(50vh, 50vw);
   height: min(50vh, 50vw);
   border-radius: 1rem;
