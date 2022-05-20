@@ -135,6 +135,7 @@ const SelectedProject = ({ data, setSelectedProject }: SelectedProjectProps) => 
         className={styles.selectedProjectImg}
         src={data.thumbnailSrc}
         alt={data.title}
+        onClick={onClick}
       />
       <p className={styles.selectedProjectText}>
         { data.desc }
@@ -203,6 +204,7 @@ const FeaturedProject = ({ data }: FeaturedProjectProps) => {
         className={styles.featuredProjectImg}
         src={data.thumbnailSrc}
         alt={data.title}
+        onClick={onClick}
       />
       <p className={styles.featuredProjectText}>
         { data.desc }
