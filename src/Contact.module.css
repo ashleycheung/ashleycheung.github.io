@@ -1,0 +1,36 @@
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: var(--dark-background);
+}
+
+.title {
+  color: var(--primary);
+}
+
+.email {
+  font-weight: 600;
+  color: var(--highlight);
+}
+
+.socials {
+  margin-top: 3rem;
+}
+
+.socialBtn {
+  color: var(--secondary);
+  font-size: 100rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  transition: color 0.2s !important;
+}
+
+.socialBtn:hover {
+  color: var(--tertiary);
+}
