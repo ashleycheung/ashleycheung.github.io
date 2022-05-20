@@ -167,8 +167,8 @@
 
 .selectedProjectImg {
   composes: featuredProjectImg;
-  width: min(50vh, 50vw);
-  height: min(50vh, 50vw);
+  width: 80%;
+  height: 80%;
   border-radius: 1rem;
   object-fit: cover;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
