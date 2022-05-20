@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <rect id="e81a7c33-c795-457d-8abc-c4a3c260cd56" data-name="Rectangle 62" x="13.657" y="155.115" width="463.641" height="220.006" fill="#e6e6e6"/>
+  <rect id="be98c830-918a-42d1-b1b0-0085d5874e90" data-name="Rectangle 75" x="26.915" y="173.98" width="437.126" height="183.558" fill="#fff"/>
+  <rect id="ea07d9fd-7a34-4098-acd7-056fd1871281" data-name="Rectangle 80" x="13.46" width="463.641" height="19.697" fill="var(--secondary)" y="142.404"/>
+  <circle id="b9ed5a45-8896-4ed9-86b4-15f853c9a185" data-name="Ellipse 90" cx="28.097" cy="153.986" r="3.651" fill="#fff"/>
+  <circle id="a9233a38-f8ba-48e0-88f3-496fd4836d40" data-name="Ellipse 91" cx="41.954" cy="153.986" r="3.651" fill="#fff"/>
+  <circle id="aa82180f-a6a9-4f5f-82fc-e73106f4ad92" data-name="Ellipse 92" cx="55.812" cy="153.986" r="3.651" fill="#fff"/>
+  <rect x="288.456" y="203.683" width="72.676" height="124.155" fill="#f2f2f2"/>
+  <rect x="129.824" y="203.681" width="146.59" height="34.175" fill="var(--secondary)"/>
+  <rect x="129.824" y="247.373" width="146.59" height="36.771" fill="#f2f2f2"/>
+  <rect x="129.824" y="293.661" width="146.59" height="34.175" fill="#f2f2f2"/>
+</svg>
