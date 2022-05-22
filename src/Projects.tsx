@@ -27,6 +27,7 @@ import postgresqlImg from './assets/postgresql.svg';
 
 import { IconButton } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 type ProjectProps = {
@@ -131,7 +132,7 @@ const SelectedProject = ({ data, setSelectedProject }: SelectedProjectProps) => 
       >
         { data.title }
       </h2>
-      <img
+      <LazyLoadImage
         className={styles.selectedProjectImg}
         src={data.thumbnailSrc}
         alt={data.title}
@@ -171,10 +172,13 @@ const OtherProject = ({
       onClick={onClick}
       className={styles.otherProject}
     >
-      <img
+      <LazyLoadImage
         className={styles.otherProjectImg}
         src={data.thumbnailSrc}
         alt={data.title}
+        effect="opacity"
+        height={"100%"}
+        width={"100%"}
       />
       <div
         className={styles.otherProjectTitle}

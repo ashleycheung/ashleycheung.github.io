@@ -25,6 +25,7 @@ export const Education = ({ offset }: EducationProps) => {
               className={styles.schoolImg}
               src={unsw}
               alt="UNSW"
+              effect="opacity"
             />
             <div className={styles.schoolContent}>
               <h2 className={styles.schoolTitle}>
