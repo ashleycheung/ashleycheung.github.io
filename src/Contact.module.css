@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
   padding: 1rem;
   background-color: var(--dark-background);
 }
@@ -20,7 +21,7 @@
 }
 
 .socials {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .socialBtn {
@@ -33,4 +34,24 @@
 
 .socialBtn:hover {
   color: var(--tertiary);
+}
+
+.bibleVerseWrapper {
+  position: absolute;
+  bottom: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bibleVerse {
+  font-size: 1rem;
+  color: var(--secondary);
+}
+
+.cross {
+  font-size: 3rem;
+  color: var(--secondary);
+  transition: 0.2s color;
 }

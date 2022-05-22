@@ -4,7 +4,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { IconButton } from "@mui/material";
-
+import { FaCross } from "react-icons/fa";
 
 type ContactProps = {
   offset: number
@@ -17,7 +17,6 @@ export const Contact = ({ offset }: ContactProps) => {
   return (
     <ParallaxLayer
       offset={offset}
-      speed={0.5}
     >
       <div className={styles.wrapper}>
         <h1 className={styles.title}>
@@ -53,6 +52,12 @@ export const Contact = ({ offset }: ContactProps) => {
               fontSize="large"
             />
           </IconButton>
+        </div>
+        <div className={styles.bibleVerseWrapper}>
+          <FaCross className={styles.cross}/>
+          <h2 className={styles.bibleVerse}>
+            To Christ be the Glory
+          </h2>
         </div>
       </div>
     </ParallaxLayer>
