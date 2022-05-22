@@ -169,7 +169,7 @@
   composes: featuredProjectImg;
   width: 80vw;
   max-width: 700px;
-  height: 40vw;
+  height: 35vh;
   border-radius: 1rem;
   object-fit: cover;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
