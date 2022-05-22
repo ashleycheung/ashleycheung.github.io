@@ -9,6 +9,8 @@ import { Education } from "./Education";
 import { Projects } from "./Projects";
 import { useRef } from "react";
 import { Contact } from "./Contact";
+import 'react-lazy-load-image-component/src/effects/opacity.css';
+
 
 function App() {
   
