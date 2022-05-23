@@ -59,6 +59,9 @@ export const Contact = ({ offset }: ContactProps) => {
             To Christ be the Glory
           </h2>
         </div>
+        <div className={styles.version}>
+          Version 1.0.0
+        </div>
       </div>
     </ParallaxLayer>
   )
