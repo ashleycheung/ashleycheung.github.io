@@ -59,7 +59,7 @@
 .featuredProjectImg {
   width: 100%;
   max-width: 1000px;
-  height: 60%;
+  height: 80%;
   border-radius: 1rem;
   object-fit: cover;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -85,7 +85,7 @@
 }
 
 .featuredProjectTechLogo {
-  height: 5vh;
+  height: 2rem;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
   margin-bottom: 0.5rem;
@@ -159,17 +159,16 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  background-color: var(--dark-background);
+  background-color: var(--background);
   padding: 1rem;
   border-radius: 1rem;
-  margin: 1rem;
 }
 
 .selectedProjectImg {
   composes: featuredProjectImg;
-  width: 80vw;
-  max-width: 700px;
-  height: 35vh;
+  width: 100%;
+  height: 50%;
+  max-height: 60vh;
   border-radius: 1rem;
   object-fit: cover;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -196,20 +195,16 @@
 
 .selectedProjectTitle {
   composes: featuredProjectTitle;
-  color: var(--primary);
 }
 
 .selectedProjectText {
   composes: featuredProjectText;
-  color: var(--secondary);
 }
 
 .selectedProjectTechList {
-  background-color: var(--background);
   padding: 1rem;
   padding-top: 1.5rem;
   border-radius: 1rem;
   display: flex;
   flex-wrap: wrap;
 }
-

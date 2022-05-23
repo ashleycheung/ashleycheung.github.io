@@ -36,13 +36,13 @@ function App() {
       <div className={styles.app}>
         <Parallax
           ref={parallaxRef}
-          pages={6}
+          pages={6.5}
         >
           <Landing scrollTo={scrollTo} offset={0}/>
           <AboutMe offset={1}/>
           <Education offset={2}/>
           <Projects offset={3}/>
-          <Contact offset={5}/>
+          <Contact offset={5.5}/>
         </Parallax>
       </div>
     </ThemeProvider>
