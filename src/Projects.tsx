@@ -25,7 +25,7 @@ import webpackImg from './assets/webpack.svg';
 import postgresqlImg from './assets/postgresql.svg';
 
 
-import { IconButton } from "@mui/material";
+import { Dialog, IconButton } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -72,36 +72,41 @@ export const Projects = ({ offset }: ProjectProps) => {
       </ParallaxLayer>
       <ParallaxLayer
         offset={offset + 1}
+        factor={1.5}
       >
         <div className={styles.otherProjectWrapper}>
           <h2>Other noteworthy projects</h2>
-          {
-            selectedProject === null ?
-            (
-              <div
-                className={styles.otherProjectGrid}
-              >
-                {
-                  PROJECTDATA.projects
-                    .map(f => (
-                      <OtherProject 
-                        key={f.title}
-                        data={f}
-                        setSelectedProject={setSelectedProject}
-                      />
-                    ))
-                }
-              </div>
-            ):
-            (
-              <SelectedProject
-                setSelectedProject={setSelectedProject}
-                data={
-                  PROJECTDATA.projects.find(p => p.title === selectedProject)!
-                }
-              />
-            )
-          }
+          <Dialog
+            open={selectedProject !== null}
+            onClose={() => setSelectedProject(null)}
+            PaperProps={{
+              style: {
+                backgroundColor: 'transparent',
+                boxShadow: 'none',
+              },
+            }}
+          >
+            <SelectedProject
+              setSelectedProject={setSelectedProject}
+              data={
+                PROJECTDATA.projects.find(p => p.title === selectedProject)!
+              }
+            />
+          </Dialog>
+          <div
+            className={styles.otherProjectGrid}
+          >
+            {
+              PROJECTDATA.projects
+                .map(f => (
+                  <OtherProject 
+                    key={f.title}
+                    data={f}
+                    setSelectedProject={setSelectedProject}
+                  />
+                ))
+            }
+          </div>
         </div>
       </ParallaxLayer>
     </React.Fragment>
@@ -116,6 +121,11 @@ type SelectedProjectProps = {
 const SelectedProject = ({ data, setSelectedProject }: SelectedProjectProps) => {
   const onClose = () => setSelectedProject(null);
   const onClick = () => window.open(data.projectSrc, '_blank')?.focus();
+  
+  if (data === undefined) {
+    return null
+  }
+  
   return (
     <div className={styles.selectedProject}>
       <div className={styles.selectedProjectBtnWrapper}>
@@ -196,6 +206,7 @@ type FeaturedProjectProps = {
 
 const FeaturedProject = ({ data }: FeaturedProjectProps) => {
   const onClick = () => window.open(data.projectSrc, '_blank')?.focus();
+  
   return (
     <div className={styles.featuredProject}>
       <h2 
