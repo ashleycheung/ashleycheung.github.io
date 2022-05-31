@@ -39,7 +39,7 @@ export const Education = ({ offset }: EducationProps) => {
                   Engineering (Mechatronics) / Computer Science
                 </li>
                 <li className={styles.listElem}>
-                  Included in 2021 & 2022 UNSW Dean's Honour's list
+                  Included in 2020 & 2021 UNSW Dean's Honour's list
                 </li>
                 <li className={styles.listElem}>
                   Distinction Average WAM
@@ -64,6 +64,9 @@ export const Education = ({ offset }: EducationProps) => {
               <ul className={styles.list}>
                 <li className={styles.listElem}>
                   Graduated with an ATAR of 98.95
+                </li>
+                <li className={styles.listElem}>
+                  Distinguished achiever in Mathematics Extension 1 & 2, Physics, English (Advanced)
                 </li>
               </ul>
             </div>

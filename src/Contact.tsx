@@ -60,7 +60,7 @@ export const Contact = ({ offset }: ContactProps) => {
           </h2>
         </div>
         <div className={styles.version}>
-          Version 1.0.0
+          Version 1.0.2
         </div>
       </div>
     </ParallaxLayer>
