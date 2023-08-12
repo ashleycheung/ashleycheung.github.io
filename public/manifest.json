@@ -1,8 +1,7 @@
 {
   "short_name": "Ashley Cheung",
-  "name": "A software engineer's portfolio",
-  "icons": [
-  ],
+  "name": "Ashley Cheung",
+  "icons": [],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
