@@ -54,6 +54,7 @@ export const LandingSection = () => {
       <Box
         display={"flex"}
         flexDir={isDesktop ? "row" : "column"}
+        marginTop={isDesktop ? 4 : 8}
         width={"100%"}
         alignItems="center"
         justifyContent="center"
@@ -62,7 +63,8 @@ export const LandingSection = () => {
         <Box
           display={"flex"}
           alignItems="center"
-          width={isDesktop ? "50%" : "70%"}
+          width={isDesktop ? "50%" : "45%"}
+          marginBottom={4}
         >
           <img
             style={{
@@ -86,28 +88,63 @@ export const LandingSection = () => {
           <Typewriter
             duration={1000}
             content={`Hi, I'm Ashley...`}
-            fontSize={isDesktop ? "4rem" : "3rem"}
+            fontSize={isDesktop ? "4rem" : "2rem"}
           />
-          <Box position={"relative"} width={"100%"} marginTop={4}>
+          <Box
+            position={"relative"}
+            width={"100%"}
+            marginTop={isDesktop ? 4 : 0}
+          >
             <Typewriter
               delay={2000}
               duration={1000}
               color="primary.500"
               content={`a software tinkerer!`}
               fontWeight={"bold"}
-              fontSize={isDesktop ? "5rem" : "4rem"}
+              fontSize={isDesktop ? "5rem" : "2.5rem"}
             />
-            {!isGrayed ? (
+            <Box position={"absolute"} right={8} top={"20%"}>
+              <ExplosionPiece
+                imgSrc={screwImg}
+                size={"50px"}
+                x={40}
+                y={-50}
+                rotate={360}
+                explode={!isGrayed}
+              />
+            </Box>
+            <Box position={"absolute"} right={"5%"} bottom={"15%"}>
+              <ExplosionPiece
+                imgSrc={fishImg}
+                size={"50px"}
+                x={10}
+                y={60}
+                rotate={-360}
+                explode={!isGrayed}
+              />
+            </Box>
+            <Box position={"absolute"} left={"5%"} top={"50%"}>
+              <ExplosionPiece
+                imgSrc={cogImg}
+                size={"50px"}
+                x={-30}
+                y={-80}
+                rotate={-270}
+                explode={!isGrayed}
+              />
+            </Box>
+            <Box position={"absolute"} left={"15%"} bottom={"15%"}>
+              <ExplosionPiece
+                imgSrc={sawImg}
+                size={"50px"}
+                x={-50}
+                y={70}
+                rotate={-360}
+                explode={!isGrayed}
+              />
+            </Box>
+            {isDesktop ? (
               <>
-                <Box position={"absolute"} right={8} top={"20%"}>
-                  <ExplosionPiece
-                    imgSrc={screwImg}
-                    size={"50px"}
-                    x={50}
-                    y={-50}
-                    rotate={360}
-                  />
-                </Box>
                 <Box position={"absolute"} left={"35%"} top={2}>
                   <ExplosionPiece
                     imgSrc={spannerImg}
@@ -115,56 +152,27 @@ export const LandingSection = () => {
                     x={-40}
                     y={-35}
                     rotate={-270}
+                    explode={!isGrayed}
                   />
                 </Box>
-                <Box position={"absolute"} left={"5%"} top={"50%"}>
-                  <ExplosionPiece
-                    imgSrc={cogImg}
-                    size={"50px"}
-                    x={-40}
-                    y={-70}
-                    rotate={-270}
-                  />
-                </Box>
-                <Box position={"absolute"} left={"15%"} bottom={"15%"}>
-                  <ExplosionPiece
-                    imgSrc={sawImg}
-                    size={"50px"}
-                    x={-40}
-                    y={50}
-                    rotate={-360}
-                  />
-                </Box>
-                {isDesktop ? (
-                  <>
-                    <Box position={"absolute"} left={"60%"} top={"15%"}>
-                      <ExplosionPiece
-                        imgSrc={shovelImg}
-                        size={"50px"}
-                        x={-40}
-                        y={-50}
-                        rotate={-360}
-                      />
-                    </Box>
 
-                    <Box position={"absolute"} right={"5%"} bottom={"15%"}>
-                      <ExplosionPiece
-                        imgSrc={fishImg}
-                        size={"50px"}
-                        x={-40}
-                        y={50}
-                        rotate={-360}
-                      />
-                    </Box>
-                  </>
-                ) : null}
+                <Box position={"absolute"} left={"60%"} top={"15%"}>
+                  <ExplosionPiece
+                    imgSrc={shovelImg}
+                    size={"50px"}
+                    x={-40}
+                    y={-50}
+                    rotate={-360}
+                    explode={!isGrayed}
+                  />
+                </Box>
               </>
             ) : null}
           </Box>
           {showButtons ? (
             <Box display={"flex"} flexWrap="wrap" justifyContent={"center"}>
               <Button
-                margin={2}
+                margin={isDesktop ? 2 : 1}
                 size={"lg"}
                 colorScheme="teal"
                 variant={"outline"}
@@ -178,11 +186,11 @@ export const LandingSection = () => {
                 <Box marginRight={2} color={"primary.500"}>
                   Check out my work!
                 </Box>
-                <TiSpanner size={"1.5rem"} color="red" />
+                <TiSpanner size={"1.5rem"} />
               </Button>
               <Button
                 color={"gray.700"}
-                margin={2}
+                margin={isDesktop ? 2 : 1}
                 size={"lg"}
                 onClick={() =>
                   scroller.scrollTo("journey-anchor", {
@@ -198,26 +206,28 @@ export const LandingSection = () => {
           ) : null}
         </Box>
       </Box>
-      <Box
-        cursor={showButtons ? "pointer" : "auto"}
-        opacity={showButtons ? 1 : 0}
-        transition="opacity 1s"
-        className="pulsate-fwd"
-        display={"flex"}
-        width={isDesktop ? "100px" : "75px"}
-        position="absolute"
-        bottom={isDesktop ? 8 : 4}
-        onClick={() => {
-          if (showButtons) {
-            scroller.scrollTo("journey-anchor", {
-              duration: 500,
-              smooth: true,
-            });
-          }
-        }}
-      >
-        <img width={"100%"} src={downArrowImg} alt="down" />
-      </Box>
+      {isDesktop ? (
+        <Box
+          cursor={showButtons ? "pointer" : "auto"}
+          opacity={showButtons ? 1 : 0}
+          transition="opacity 1s"
+          className="pulsate-fwd"
+          display={"flex"}
+          width={"100px"}
+          position="absolute"
+          bottom={8}
+          onClick={() => {
+            if (showButtons) {
+              scroller.scrollTo("journey-anchor", {
+                duration: 500,
+                smooth: true,
+              });
+            }
+          }}
+        >
+          <img width={"100%"} src={downArrowImg} alt="down" />
+        </Box>
+      ) : null}
     </Box>
   );
 };

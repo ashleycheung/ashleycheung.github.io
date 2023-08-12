@@ -10,14 +10,9 @@ export const TechnologyList = ({
   maxHeight,
 }: TechnologyListProps) => {
   return (
-    <Box
-      alignItems={"center"}
-      display={"flex"}
-      flexWrap="wrap"
-      justifyContent={"center"}
-    >
+    <Box display={"flex"} flexWrap="wrap" justifyContent={"center"}>
       {technologies.map((tech) => (
-        <TechLogo key={tech} name={tech} maxHeight={maxHeight ?? "30px"} />
+        <TechLogo key={tech} name={tech} maxHeight={maxHeight ?? "50px"} />
       ))}
     </Box>
   );

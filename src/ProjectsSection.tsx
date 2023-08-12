@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { FeaturedProject } from "./FeaturedProject";
 import { useIsDesktop } from "./hooks/useIsDesktop";
 import { useIsTablet } from "./hooks/useIsTablet";
@@ -23,9 +23,15 @@ export const ProjectsSection = () => {
           marginBottom={8}
         >
           <Box width={!isDesktop ? "100%" : "50%"} paddingRight={4}>
-            <Heading fontSize={"xxx-large"} marginBottom={4}>
+            <Text
+              fontSize={isDesktop ? "5xl" : "4xl"}
+              fontWeight={"bold"}
+              marginBottom={4}
+              width={"100%"}
+            >
               My Work
-            </Heading>
+            </Text>
+
             <Text fontSize={"xl"} marginBottom={4}>
               As a tinkerer at heart, there is nothing I like to do more than to
               tinker with projects in my spare time! From multiplayer games, to

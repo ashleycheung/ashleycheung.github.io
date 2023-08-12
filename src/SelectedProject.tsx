@@ -33,8 +33,14 @@ export const SelectedProject = ({ project }: SelectedProjectProps) => {
             {project.title}
           </Heading>
           {!isDesktop ? (
-            <Box display="flex" width={"100%"} marginBottom={4}>
+            <Box
+              display="flex"
+              width={"100%"}
+              maxHeight={"40vh"}
+              marginBottom={4}
+            >
               <img
+                className="boxShadow"
                 style={{ objectFit: "contain" }}
                 src={project.thumbnailSrc}
                 width="100%"
@@ -48,9 +54,10 @@ export const SelectedProject = ({ project }: SelectedProjectProps) => {
           <TechnologyList technologies={project.technologies} />
         </Box>
         {isDesktop ? (
-          <Box display="flex" width={"100%"} height={"50vh"}>
+          <Box display="flex" width={"100%"} maxHeight={"50vh"}>
             <img
               style={{ objectFit: "contain" }}
+              className="boxShadow"
               src={project.thumbnailSrc}
               width="100%"
               alt={project.desc}

@@ -14,7 +14,7 @@ import opencvImg from "./assets/opencv.svg";
 import pygameImg from "./assets/pygame.png";
 import pythonImg from "./assets/python.svg";
 import webpackImg from "./assets/webpack.svg";
-import postgresqlImg from "./assets/postgresql.svg";
+import postgresqlImg from "./assets/postgresql.png";
 import angularImg from "./assets/angular.svg";
 import phpImg from "./assets/php.svg";
 import mysqlImg from "./assets/mysql.svg";
@@ -23,7 +23,7 @@ import cppImg from "./assets/cplusplus.svg";
 import goImg from "./assets/go.svg";
 import sqliteImg from "./assets/sqlite.svg";
 import typescriptImg from "./assets/typescript.svg";
-import { Box } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
 
 interface TechLogoProps {
   name: TechLogoType;
@@ -120,8 +120,12 @@ export const TechLogo = ({ name, maxHeight }: TechLogoProps) => {
     return null;
   }
   return (
-    <Box display={"flex"} height={maxHeight ?? "50px"} margin={2}>
-      <img height={"100%"} src={src} alt={name} />
-    </Box>
+    <Image
+      height={maxHeight}
+      src={src}
+      alt={name}
+      padding={1}
+      objectFit={"contain"}
+    />
   );
 };

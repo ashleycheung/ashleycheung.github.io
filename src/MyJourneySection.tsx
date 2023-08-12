@@ -1,4 +1,4 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { Timeline, TimelineProps } from "./Timeline";
 import freelancerLogo from "./assets/freelancer.png";
 import unswLogo from "./assets/unsw.jpg";
@@ -92,9 +92,14 @@ export const MyJourneySection = () => {
         alignItems={"center"}
         padding={!isDesktop ? 4 : 8}
       >
-        <Heading fontSize={"xxx-large"} marginBottom={4} width={"100%"}>
+        <Text
+          fontSize={isDesktop ? "5xl" : "4xl"}
+          fontWeight={"bold"}
+          marginBottom={4}
+          width={"100%"}
+        >
           My Journey
-        </Heading>
+        </Text>
         <Timeline data={timelineData} />
       </Box>
     </Box>
