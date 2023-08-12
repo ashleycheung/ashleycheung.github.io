@@ -16,7 +16,7 @@ const timelineData: TimelineProps["data"] = [
     description: [
       "Implemented dynamic frontend components using Angular",
       "Drafted a technical specification of a facebook automation feature",
-      "Created well tested REST API endpoints using PHP",
+      "Created well tested REST API endpoints using PHP and Python",
       "Automated the team's internal task tracking through Typescript",
     ],
     technologies: [
@@ -24,6 +24,7 @@ const timelineData: TimelineProps["data"] = [
       TechLogoType.Angular,
       TechLogoType.MySql,
       TechLogoType.Php,
+      TechLogoType.Python,
     ],
   },
   {
