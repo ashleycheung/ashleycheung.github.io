@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { scroller } from "react-scroll";
 import { TiSpanner } from "react-icons/ti";
 import { AiFillFlag } from "react-icons/ai";
-import downArrowImg from "./assets/down_arrow.svg";
 import screwImg from "./assets/screw.svg";
 import cogImg from "./assets/cog.svg";
 import sawImg from "./assets/saw.svg";
@@ -206,28 +205,6 @@ export const LandingSection = () => {
           ) : null}
         </Box>
       </Box>
-      {isDesktop ? (
-        <Box
-          cursor={showButtons ? "pointer" : "auto"}
-          opacity={showButtons ? 1 : 0}
-          transition="opacity 1s"
-          className="pulsate-fwd"
-          display={"flex"}
-          width={"100px"}
-          position="absolute"
-          bottom={8}
-          onClick={() => {
-            if (showButtons) {
-              scroller.scrollTo("journey-anchor", {
-                duration: 500,
-                smooth: true,
-              });
-            }
-          }}
-        >
-          <img width={"100%"} src={downArrowImg} alt="down" />
-        </Box>
-      ) : null}
     </Box>
   );
 };
