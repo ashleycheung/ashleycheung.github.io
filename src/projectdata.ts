@@ -135,7 +135,7 @@ export const PROJECTDATA: PortfolioProjects = {
       title: "Space Shooter",
       desc: "A web-based real time multiplayer shooting game",
       thumbnailSrc: spaceShooterImg,
-      projectSrc: "http://space-shooter-io.herokuapp.com/",
+      projectSrc: "https://space-shooter-pkia.onrender.com/",
       technologies: [
         TechLogoType.Javascript,
         TechLogoType.NodeJS,
