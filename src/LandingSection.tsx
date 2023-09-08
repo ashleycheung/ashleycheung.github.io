@@ -98,7 +98,7 @@ export const LandingSection = () => {
               delay={2000}
               duration={1000}
               color="primary.500"
-              content={`a software tinkerer!`}
+              content={`a full stack software engineer!`}
               fontWeight={"bold"}
               fontSize={isDesktop ? "5rem" : "2.5rem"}
             />
