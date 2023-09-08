@@ -126,8 +126,8 @@ export const LandingSection = () => {
               <ExplosionPiece
                 imgSrc={cogImg}
                 size={"50px"}
-                x={-30}
-                y={-80}
+                x={-35}
+                y={-130}
                 rotate={-270}
                 explode={!isGrayed}
               />
