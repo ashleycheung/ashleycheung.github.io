@@ -18,7 +18,7 @@ export const FeaturedProject = () => {
       </Box>
       <Box padding={4} bottom={4} right={4} backgroundColor="white">
         <Heading fontSize={"lg"}>Featured Project</Heading>
-        <Heading fontSize={"5xl"}>{project.title}</Heading>
+        <Heading fontSize={"4xl"}>{project.title}</Heading>
         <Text marginBottom={4}>{project.desc}</Text>
         <ProjectLinkButton url={project.projectSrc} />
         <Divider orientation="horizontal" marginTop={2} marginBottom={2} />
