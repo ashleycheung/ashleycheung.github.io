@@ -42,7 +42,7 @@ const timelineData: TimelineProps["data"] = [
   {
     logo: unswLogo,
     title: "Computer Science and Mechatronics Engineering",
-    date: "January 2019 - PRESENT",
+    date: "January 2019 - December 2023",
     location: "UNSW",
     locationUrl: "https://www.unsw.edu.au/",
     description: [

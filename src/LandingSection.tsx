@@ -75,6 +75,7 @@ export const LandingSection = () => {
             }}
             src={profile}
             alt="profile"
+            className="scale-in-center"
           />
         </Box>
         <Box

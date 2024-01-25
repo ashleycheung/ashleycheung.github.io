@@ -17,6 +17,7 @@ import arcadianRealmsImg from "./assets/arcadian-realms.png";
 import tribeHuntImg from "./assets/tribeHunt.png";
 import tribeGameshowImg from "./assets/tribe-gameshow.png";
 import tribeCampImg from "./assets/tribe-camp.png";
+import realmforgeImg from "./assets/realmforge.png";
 
 export type Project = {
   title: string;
@@ -33,19 +34,31 @@ export type PortfolioProjects = {
 
 export const PROJECTDATA: PortfolioProjects = {
   featuredProject: {
-    title: "Doggo Run",
-    desc: `A web browser game made for mobile.
+    title: "Realmforge 3D Editor",
+    desc: `A browser based 3D editor for creating stunning worlds.
       `,
-    thumbnailSrc: doggoRunImg,
-    projectSrc: "https://doggo-run.vercel.app/",
+    thumbnailSrc: realmforgeImg,
+    projectSrc: "https://realmforge.vercel.app/",
     technologies: [
-      TechLogoType.Javascript,
+      TechLogoType.Typescript,
       TechLogoType.ThreeJS,
-      TechLogoType.Webpack,
+      TechLogoType.React,
     ],
   },
 
   projects: [
+    {
+      title: "Doggo Run",
+      desc: `A web browser game made for mobile.
+      `,
+      thumbnailSrc: doggoRunImg,
+      projectSrc: "https://doggo-run.vercel.app/",
+      technologies: [
+        TechLogoType.Javascript,
+        TechLogoType.ThreeJS,
+        TechLogoType.Webpack,
+      ],
+    },
     {
       title: "Go Shooter",
       desc: `A free for all multiplayer shooting game in the browser!.
