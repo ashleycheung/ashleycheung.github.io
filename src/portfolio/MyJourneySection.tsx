@@ -1,10 +1,10 @@
 import { Box, Text } from "@chakra-ui/react";
 import { Timeline, TimelineProps } from "./Timeline";
-import freelancerLogo from "./assets/freelancer.png";
-import unswLogo from "./assets/unsw.jpg";
-import baulkoLogo from "./assets/baulko.png";
-import { useIsDesktop } from "./hooks/useIsDesktop";
+import freelancerLogo from "../assets/freelancer.png";
+import unswLogo from "../assets/unsw.jpg";
+import baulkoLogo from "../assets/baulko.png";
 import { TechLogoType } from "./TechLogo";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 
 const timelineData: TimelineProps["data"] = [
   {
@@ -15,7 +15,7 @@ const timelineData: TimelineProps["data"] = [
     date: "March 2023 - PRESENT",
     description: [
       "Implemented dynamic frontend components using Angular",
-      "Drafted a technical specification of a facebook automation feature",
+      "Took charge in migrating the twilio-sdk of the Angular Webapp to the zoom-sdk",
       "Created well tested REST API endpoints using PHP and Python",
       "Automated the team's internal task tracking through Typescript",
     ],

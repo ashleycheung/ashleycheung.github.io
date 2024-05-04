@@ -1,24 +1,29 @@
 import { Box, Button } from "@chakra-ui/react";
-import { useIsDesktop } from "./hooks/useIsDesktop";
 import { Typewriter } from "./Typewriter";
-import profile from "./assets/profile.png";
+import profile from "../assets/profile.png";
 import { useEffect, useState } from "react";
 import { scroller } from "react-scroll";
 import { TiSpanner } from "react-icons/ti";
 import { AiFillFlag } from "react-icons/ai";
-import screwImg from "./assets/screw.svg";
-import cogImg from "./assets/cog.svg";
-import sawImg from "./assets/saw.svg";
-import shovelImg from "./assets/shovel.svg";
-import spannerImg from "./assets/spanner.svg";
-import fishImg from "./assets/fish.svg";
+import screwImg from "../assets/screw.svg";
+import cogImg from "../assets/cog.svg";
+import sawImg from "../assets/saw.svg";
+import shovelImg from "../assets/shovel.svg";
+import spannerImg from "../assets/spanner.svg";
+import fishImg from "../assets/fish.svg";
 import { ExplosionPiece } from "./ExplosionPiece";
-import { SocialsRow } from "./SocialsRow";
+import { useIsDesktop } from "../hooks/useIsDesktop";
+import { Header } from "../utils/Header";
 
 export const LandingSection = () => {
   const isDesktop = useIsDesktop();
   const [isGrayed, setIsGrayed] = useState(true);
   const [showButtons, setShowButtons] = useState(false);
+
+  // Scroll to start on load
+  useEffect(() => {
+    scroller.scrollTo("landing-anchor", {});
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -34,6 +39,7 @@ export const LandingSection = () => {
 
   return (
     <Box
+      id="landing-anchor"
       height={"100vh"}
       alignItems={"center"}
       display={"flex"}
@@ -41,14 +47,8 @@ export const LandingSection = () => {
       padding={!isDesktop ? 4 : 8}
       position={"relative"}
     >
-      <Box
-        opacity={showButtons ? 1 : 0}
-        transition="opacity 0.5s"
-        position={"absolute"}
-        right={4}
-        top={4}
-      >
-        <SocialsRow />
+      <Box position={"absolute"} top={0} left={0} right={0}>
+        <Header show={showButtons} />
       </Box>
       <Box
         display={"flex"}

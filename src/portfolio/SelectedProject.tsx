@@ -1,5 +1,5 @@
 import { Box, Divider, Heading, Text } from "@chakra-ui/react";
-import { useIsDesktop } from "./hooks/useIsDesktop";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 import { Project } from "./projectdata";
 import { ProjectLinkButton } from "./ProjectLinkButton";
 import { TechnologyList } from "./TechnologyList";

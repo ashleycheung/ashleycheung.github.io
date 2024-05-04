@@ -2,7 +2,7 @@ import { Box, Link, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
 import { TechLogoType } from "./TechLogo";
 import { TechnologyList } from "./TechnologyList";
 import { BsCheckCircle } from "react-icons/bs";
-import { useIsDesktop } from "./hooks/useIsDesktop";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export interface TimelineProps {
   data: {

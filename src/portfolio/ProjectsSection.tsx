@@ -1,9 +1,9 @@
 import { Box, Text } from "@chakra-ui/react";
 import { FeaturedProject } from "./FeaturedProject";
-import { useIsDesktop } from "./hooks/useIsDesktop";
-import { useIsTablet } from "./hooks/useIsTablet";
 import { Masonry } from "./Masonry";
-import rightArrowImg from "./assets/right_arrow.svg";
+import rightArrowImg from "../assets/right_arrow.svg";
+import { useIsDesktop } from "../hooks/useIsDesktop";
+import { useIsTablet } from "../hooks/useIsTablet";
 
 export const ProjectsSection = () => {
   const isTablet = useIsTablet();

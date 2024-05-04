@@ -2,10 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { ChakraProvider, extendTheme, ThemeConfig } from "@chakra-ui/react";
 import "./index.css";
-import { ProjectsSection } from "./ProjectsSection";
-import { MyJourneySection } from "./MyJourneySection";
-import { LandingSection } from "./LandingSection";
-import { ContactSection } from "./ContactSection";
+import { Portfolio } from "./portfolio/Portfolio";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Blog } from "./blog/Blog";
 
 const config: ThemeConfig = {
   initialColorMode: "light",
@@ -21,16 +20,24 @@ const portfolioTheme = extendTheme({
   },
 });
 
+const router = createBrowserRouter([
+  {
+    path: "/blog/:blogId",
+    element: <Blog />,
+  },
+  {
+    path: "",
+    element: <Portfolio />,
+  },
+]);
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <ChakraProvider theme={portfolioTheme}>
-      <LandingSection />
-      <MyJourneySection />
-      <ProjectsSection />
-      <ContactSection />
+      <RouterProvider router={router} />
     </ChakraProvider>
   </React.StrictMode>
 );

@@ -11,7 +11,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { useIsDesktop } from "./hooks/useIsDesktop";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 import { Project, PROJECTDATA } from "./projectdata";
 import { SelectedProject } from "./SelectedProject";
 import { TechnologyList } from "./TechnologyList";
