@@ -10,6 +10,10 @@ export interface Blog {
    */
   title: string;
   /**
+   * The description of the blog
+   */
+  description: string;
+  /**
    * Date of publication
    */
   date: string;
@@ -27,6 +31,7 @@ export const BLOGS: Blog[] = [
     id: "building-a-plugin-system-in-javascript",
     markdownSrc: "/markdown/plugin.md",
     title: "How I built a plugin system using Javascript",
+    description: "My journey of building a plugin system using javascript",
     date: "May 4, 2024",
     thumbnailSrc: "/blog-assets/plugin.jpg",
   },
