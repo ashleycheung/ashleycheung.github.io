@@ -6,11 +6,7 @@ import { redirect } from "next/navigation";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: BLOGS.map((blog) => ({
-      params: {
-        blogId: blog.id,
-      },
-    })),
+    paths: [],
     fallback: true,
   };
 };
