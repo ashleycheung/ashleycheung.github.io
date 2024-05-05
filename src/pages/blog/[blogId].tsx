@@ -1,17 +1,21 @@
 import { BlogComponent } from "@/components/blog/Blog";
 import { Blog, BLOGS } from "@/components/blog/blogdata";
+import { NotFoundPage } from "@/components/utils/NotFoundPage";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import { redirect } from "next/navigation";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [],
+    paths: BLOGS.map((blog) => ({
+      params: {
+        blogId: blog.id,
+      },
+    })),
     fallback: true,
   };
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = (context) => {
   const blog = BLOGS.find((blog) => blog.id === context.params?.blogId);
   return {
     props: {
@@ -22,7 +26,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export default function BlogPage({ blog }: { blog: Blog | undefined }) {
   if (!blog) {
-    redirect("/");
+    return <NotFoundPage />;
   }
 
   return (
