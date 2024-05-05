@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { Blog } from "../blog/blogdata";
 import { PersonalAvatar } from "../utils/PersonalAvatar";
 
@@ -8,7 +8,7 @@ interface BlogCardProps {
 }
 
 export const BlogCard = ({ blog }: BlogCardProps) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   return (
     <Box
       className="boxShadow"
@@ -16,7 +16,7 @@ export const BlogCard = ({ blog }: BlogCardProps) => {
       borderRadius={"md"}
       overflow={"hidden"}
       cursor={"pointer"}
-      onClick={() => navigate(`/blog/${blog.id}`)}
+      onClick={() => router.push(`/blog/${blog.id}`)}
     >
       <img
         src={blog.thumbnailSrc}

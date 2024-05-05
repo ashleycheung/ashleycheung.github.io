@@ -56,3 +56,60 @@ div {
     opacity: 1;
   }
 }
+
+.markdown {
+  font-size: 1.2rem;
+}
+
+.markdown h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.markdown h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.markdown h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.markdown p {
+  margin-bottom: 1rem;
+}
+
+.markdown .image-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.markdown img {
+  margin-bottom: 1rem;
+}
+
+.markdown a {
+  color: #319795;
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
+
+.markdown pre {
+  margin-bottom: 1rem;
+}
+
+.markdown ul {
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.markdown ol {
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}

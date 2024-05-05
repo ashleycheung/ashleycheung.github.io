@@ -1,18 +1,18 @@
 import { Box, Button } from "@chakra-ui/react";
 import { Typewriter } from "./Typewriter";
-import profile from "../assets/profile.png";
+import profile from "/public/assets/profile.png";
 import { useEffect, useState } from "react";
 import { scroller } from "react-scroll";
 import { TiSpanner } from "react-icons/ti";
 import { AiFillFlag } from "react-icons/ai";
-import screwImg from "../assets/screw.svg";
-import cogImg from "../assets/cog.svg";
-import sawImg from "../assets/saw.svg";
-import shovelImg from "../assets/shovel.svg";
-import spannerImg from "../assets/spanner.svg";
-import fishImg from "../assets/fish.svg";
+import screwImg from "/public/assets/screw.svg";
+import cogImg from "/public/assets/cog.svg";
+import sawImg from "/public/assets/saw.svg";
+import shovelImg from "/public/assets/shovel.svg";
+import spannerImg from "/public/assets/spanner.svg";
+import fishImg from "/public/assets/fish.svg";
 import { ExplosionPiece } from "./ExplosionPiece";
-import { useIsDesktop } from "../hooks/useIsDesktop";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { Header } from "../utils/Header";
 
 export const LandingSection = () => {
@@ -73,7 +73,7 @@ export const LandingSection = () => {
                 : "blur(0) grayscale(0)",
               transition: "filter 0.5s",
             }}
-            src={profile}
+            src={profile.src}
             alt="profile"
             className="scale-in-center"
           />
@@ -105,7 +105,7 @@ export const LandingSection = () => {
             />
             <Box position={"absolute"} right={8} top={"20%"}>
               <ExplosionPiece
-                imgSrc={screwImg}
+                imgSrc={screwImg.src}
                 size={"50px"}
                 x={40}
                 y={-50}
@@ -115,7 +115,7 @@ export const LandingSection = () => {
             </Box>
             <Box position={"absolute"} right={"5%"} bottom={"15%"}>
               <ExplosionPiece
-                imgSrc={fishImg}
+                imgSrc={fishImg.src}
                 size={"50px"}
                 x={10}
                 y={60}
@@ -125,7 +125,7 @@ export const LandingSection = () => {
             </Box>
             <Box position={"absolute"} left={"5%"} top={"50%"}>
               <ExplosionPiece
-                imgSrc={cogImg}
+                imgSrc={cogImg.src}
                 size={"50px"}
                 x={-35}
                 y={-130}
@@ -135,7 +135,7 @@ export const LandingSection = () => {
             </Box>
             <Box position={"absolute"} left={"15%"} bottom={"15%"}>
               <ExplosionPiece
-                imgSrc={sawImg}
+                imgSrc={sawImg.src}
                 size={"50px"}
                 x={-50}
                 y={70}
@@ -147,7 +147,7 @@ export const LandingSection = () => {
               <>
                 <Box position={"absolute"} left={"35%"} top={2}>
                   <ExplosionPiece
-                    imgSrc={spannerImg}
+                    imgSrc={spannerImg.src}
                     size={"50px"}
                     x={-40}
                     y={-35}
@@ -158,7 +158,7 @@ export const LandingSection = () => {
 
                 <Box position={"absolute"} left={"60%"} top={"15%"}>
                   <ExplosionPiece
-                    imgSrc={shovelImg}
+                    imgSrc={shovelImg.src}
                     size={"50px"}
                     x={-40}
                     y={-50}

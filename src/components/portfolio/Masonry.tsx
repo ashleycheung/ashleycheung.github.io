@@ -11,7 +11,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { useIsDesktop } from "../hooks/useIsDesktop";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { Project, PROJECTDATA } from "./projectdata";
 import { SelectedProject } from "./SelectedProject";
 import { TechnologyList } from "./TechnologyList";
@@ -73,7 +73,7 @@ export const Masonry = ({ columns, gap }: MasonryProps) => {
                 >
                   <img
                     width={"100%"}
-                    src={project.thumbnailSrc}
+                    src={project.thumbnailSrc.src}
                     alt={project.desc}
                   />
                   {isDesktop ? (

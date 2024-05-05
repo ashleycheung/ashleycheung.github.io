@@ -1,9 +1,9 @@
 import { Box, Text } from "@chakra-ui/react";
 import { FeaturedProject } from "./FeaturedProject";
 import { Masonry } from "./Masonry";
-import rightArrowImg from "../assets/right_arrow.svg";
-import { useIsDesktop } from "../hooks/useIsDesktop";
-import { useIsTablet } from "../hooks/useIsTablet";
+import rightArrowImg from "/public/assets/right_arrow.svg";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
+import { useIsTablet } from "../../hooks/useIsTablet";
 
 export const ProjectsSection = () => {
   const isTablet = useIsTablet();
@@ -44,7 +44,7 @@ export const ProjectsSection = () => {
             {isDesktop ? (
               <Box display={"flex"} justifyContent="center">
                 <Box width={"150px"}>
-                  <img src={rightArrowImg} width="100%" alt="right arrow" />
+                  <img src={rightArrowImg.src} width="100%" alt="right arrow" />
                 </Box>
               </Box>
             ) : null}

@@ -1,7 +1,7 @@
 import { Box, Heading } from "@chakra-ui/react";
 import { SocialsRow } from "./SocialsRow";
 import { FaCross } from "react-icons/fa";
-import { useIsDesktop } from "../hooks/useIsDesktop";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
 
 export const ContactSection = () => {
   const isDesktop = useIsDesktop();

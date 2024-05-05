@@ -1,29 +1,30 @@
-import reactImg from "../assets/react.svg";
-import javascriptImg from "../assets/javascript.svg";
-import nodejsImg from "../assets/nodejs.svg";
-import mongodbImg from "../assets/mongodb.svg";
-import socketioImg from "../assets/socketio.svg";
-import threejsImg from "../assets/threejs.png";
-import cssImg from "../assets/css.svg";
-import dialogflowImg from "../assets/dialogflow.svg";
-import flaskImg from "../assets/flask.svg";
-import godotImg from "../assets/godot.svg";
-import html5Img from "../assets/html5.svg";
-import materialuiImg from "../assets/materialui.svg";
-import opencvImg from "../assets/opencv.svg";
-import pygameImg from "../assets/pygame.png";
-import pythonImg from "../assets/python.svg";
-import webpackImg from "../assets/webpack.svg";
-import postgresqlImg from "../assets/postgresql.png";
-import angularImg from "../assets/angular.svg";
-import phpImg from "../assets/php.svg";
-import mysqlImg from "../assets/mysql.svg";
-import rabbitMqImg from "../assets/rabbitmq.svg";
-import cppImg from "../assets/cplusplus.svg";
-import goImg from "../assets/go.svg";
-import sqliteImg from "../assets/sqlite.svg";
-import typescriptImg from "../assets/typescript.svg";
+import reactImg from "/public/assets/react.svg";
+import javascriptImg from "/public/assets/javascript.svg";
+import nodejsImg from "/public/assets/nodejs.svg";
+import mongodbImg from "/public/assets/mongodb.svg";
+import socketioImg from "/public/assets/socketio.svg";
+import threejsImg from "/public/assets/threejs.png";
+import cssImg from "/public/assets/css.svg";
+import dialogflowImg from "/public/assets/dialogflow.svg";
+import flaskImg from "/public/assets/flask.svg";
+import godotImg from "/public/assets/godot.svg";
+import html5Img from "/public/assets/html5.svg";
+import materialuiImg from "/public/assets/materialui.svg";
+import opencvImg from "/public/assets/opencv.svg";
+import pygameImg from "/public/assets/pygame.png";
+import pythonImg from "/public/assets/python.svg";
+import webpackImg from "/public/assets/webpack.svg";
+import postgresqlImg from "/public/assets/postgresql.png";
+import angularImg from "/public/assets/angular.svg";
+import phpImg from "/public/assets/php.svg";
+import mysqlImg from "/public/assets/mysql.svg";
+import rabbitMqImg from "/public/assets/rabbitmq.svg";
+import cppImg from "/public/assets/cplusplus.svg";
+import goImg from "/public/assets/go.svg";
+import sqliteImg from "/public/assets/sqlite.svg";
+import typescriptImg from "/public/assets/typescript.svg";
 import { Image } from "@chakra-ui/react";
+import { StaticImageData } from "next/image";
 
 interface TechLogoProps {
   name: TechLogoType;
@@ -59,7 +60,7 @@ export enum TechLogoType {
 }
 
 export const TechLogo = ({ name, maxHeight }: TechLogoProps) => {
-  const getSrc = () => {
+  const getSrc = (): StaticImageData => {
     switch (name) {
       case TechLogoType.React:
         return reactImg;
@@ -122,7 +123,7 @@ export const TechLogo = ({ name, maxHeight }: TechLogoProps) => {
   return (
     <Image
       height={maxHeight}
-      src={src}
+      src={src.src}
       alt={name}
       padding={1}
       objectFit={"contain"}

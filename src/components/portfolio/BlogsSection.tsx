@@ -1,8 +1,8 @@
 import { Box, Text } from "@chakra-ui/react";
 import { BLOGS } from "../blog/blogdata";
-import { useIsDesktop } from "../hooks/useIsDesktop";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { BlogCard } from "./BlogCard";
-import sawSvg from "../assets/saw.svg";
+import sawSvg from "/public/assets/saw.svg";
 
 export const BlogsSection = () => {
   const isDesktop = useIsDesktop();
@@ -37,7 +37,7 @@ export const BlogsSection = () => {
               fontWeight={"bold"}
               flexDir={"column"}
             >
-              <img src={sawSvg} alt="saw" width={150} height={150} />
+              <img src={sawSvg.src} alt="saw" width={150} height={150} />
               <Box paddingTop={4}>And more coming...</Box>
             </Box>
           ) : null}

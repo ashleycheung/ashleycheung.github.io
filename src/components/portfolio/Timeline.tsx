@@ -2,11 +2,12 @@ import { Box, Link, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
 import { TechLogoType } from "./TechLogo";
 import { TechnologyList } from "./TechnologyList";
 import { BsCheckCircle } from "react-icons/bs";
-import { useIsDesktop } from "../hooks/useIsDesktop";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
+import { StaticImageData } from "next/image";
 
 export interface TimelineProps {
   data: {
-    logo: string;
+    logo: StaticImageData;
     title: string;
     location: string;
     locationUrl: string;
@@ -32,7 +33,7 @@ export const Timeline = ({ data }: TimelineProps) => {
             position={"relative"}
           >
             <Box width={iconSize} height={iconSize} padding={4} display="flex">
-              <img width="100%" height="100%" src={d.logo} alt="logo" />
+              <img width="100%" height="100%" src={d.logo.src} alt="logo" />
             </Box>
             <Box
               position={"absolute"}

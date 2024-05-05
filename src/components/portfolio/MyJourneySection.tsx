@@ -1,10 +1,10 @@
 import { Box, Text } from "@chakra-ui/react";
 import { Timeline, TimelineProps } from "./Timeline";
-import freelancerLogo from "../assets/freelancer.png";
-import unswLogo from "../assets/unsw.jpg";
-import baulkoLogo from "../assets/baulko.png";
+import freelancerLogo from "/public/assets/freelancer.png";
+import unswLogo from "/public/assets/unsw.jpg";
+import baulkoLogo from "/public/assets/baulko.png";
 import { TechLogoType } from "./TechLogo";
-import { useIsDesktop } from "../hooks/useIsDesktop";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
 
 const timelineData: TimelineProps["data"] = [
   {

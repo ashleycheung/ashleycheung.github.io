@@ -1,23 +1,29 @@
 import { Box } from "@chakra-ui/react";
 import { useEffect, useMemo, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { useIsDesktop } from "../hooks/useIsDesktop";
-import { useTitle } from "../hooks/useTitle";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { Header } from "../utils/Header";
-import { BLOGS } from "./blogdata";
+import { Blog } from "./blogdata";
 import { MarkdownRender } from "./MarkdownRender";
 import { BlogHeader } from "./BlogHeader";
 import { BlogFooter } from "./BlogFooter";
 
-export const Blog = () => {
+interface BlogComponentProps {
+  blog: Blog;
+}
+
+export const BlogComponent = ({ blog }: BlogComponentProps) => {
   const isDesktop = useIsDesktop();
+
   const [markdown, setMarkdown] = useState<null | string>(null);
-  const { blogId } = useParams();
-  const blog = useMemo(
-    () => BLOGS.find((blog) => blog.id === blogId),
-    [blogId]
-  );
-  const navigate = useNavigate();
+
+  // Load blog
+  useEffect(() => {
+    (async () => {
+      const resp = await fetch(blog.markdownSrc);
+      const text = await resp.text();
+      setMarkdown(text);
+    })();
+  }, [blog]);
 
   const wordCount = useMemo(
     () => markdown?.split(" ").filter((i) => i.trim().length !== 0).length,
@@ -29,27 +35,6 @@ export const Blog = () => {
     [wordCount]
   );
 
-  // Invalid blog so navigate away
-  useEffect(() => {
-    if (!blog) {
-      navigate("/");
-    }
-  }, [blog, navigate]);
-
-  // Load title
-  useTitle(blog?.title);
-
-  // Load blog
-  useEffect(() => {
-    if (blog) {
-      (async () => {
-        const resp = await fetch(blog.markdownSrc);
-        const text = await resp.text();
-        setMarkdown(text);
-      })();
-    }
-  }, [blog]);
-
   return (
     <Box display={"flex"} flexDir={"column"} alignItems={"center"}>
       <Header show={true} showLogo={true} />
@@ -60,7 +45,7 @@ export const Blog = () => {
         padding={isDesktop ? 0 : 4}
         paddingBottom={"100px"}
       >
-        {blog && readingTime && markdown ? (
+        {readingTime && markdown ? (
           <>
             <BlogHeader blog={blog} readingTime={readingTime} />
             <MarkdownRender markdown={markdown} />

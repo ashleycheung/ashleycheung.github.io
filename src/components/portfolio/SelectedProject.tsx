@@ -1,5 +1,5 @@
 import { Box, Divider, Heading, Text } from "@chakra-ui/react";
-import { useIsDesktop } from "../hooks/useIsDesktop";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { Project } from "./projectdata";
 import { ProjectLinkButton } from "./ProjectLinkButton";
 import { TechnologyList } from "./TechnologyList";
@@ -42,7 +42,7 @@ export const SelectedProject = ({ project }: SelectedProjectProps) => {
               <img
                 className="boxShadow"
                 style={{ objectFit: "contain" }}
-                src={project.thumbnailSrc}
+                src={project.thumbnailSrc.src}
                 width="100%"
                 alt={project.desc}
               />
@@ -58,7 +58,7 @@ export const SelectedProject = ({ project }: SelectedProjectProps) => {
             <img
               style={{ objectFit: "contain" }}
               className="boxShadow"
-              src={project.thumbnailSrc}
+              src={project.thumbnailSrc.src}
               width="100%"
               alt={project.desc}
             />

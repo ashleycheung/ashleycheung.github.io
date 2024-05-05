@@ -2,7 +2,6 @@ import { Box } from "@chakra-ui/react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import remarkGfm from "remark-gfm";
-import "./markdown.css";
 
 interface MarkdownRenderProps {
   markdown: string;

@@ -14,7 +14,7 @@ export const FeaturedProject = () => {
       overflow="hidden"
     >
       <Box width={"100%"} display="flex">
-        <img src={project.thumbnailSrc} width="100%" alt={project.desc} />
+        <img src={project.thumbnailSrc.src} width="100%" alt={project.desc} />
       </Box>
       <Box padding={4} bottom={4} right={4} backgroundColor="white">
         <Heading fontSize={"lg"}>Featured Project</Heading>

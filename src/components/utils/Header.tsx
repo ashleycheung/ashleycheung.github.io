@@ -1,8 +1,9 @@
 import { Box } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import { useIsDesktop } from "../hooks/useIsDesktop";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { SocialsRow } from "../portfolio/SocialsRow";
+import favicon from "/public/favicon.svg";
 
 interface HeaderProps {
   show: boolean;
@@ -11,10 +12,10 @@ interface HeaderProps {
 
 export const Header = ({ show, showLogo }: HeaderProps) => {
   const isDesktop = useIsDesktop();
-  const navigate = useNavigate();
+  const router = useRouter();
   const onClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
+    router.push("/");
+  }, []);
   return (
     <Box
       padding={4}
@@ -33,7 +34,7 @@ export const Header = ({ show, showLogo }: HeaderProps) => {
           alignItems={"center"}
           onClick={onClick}
         >
-          <img src="/favicon.svg" alt="logo" width={50} height={50} />
+          <img src={favicon.src} alt="logo" width={50} height={50} />
           {isDesktop ? (
             <Box fontWeight={"bold"} fontSize={"1.5rem"} paddingLeft={2}>
               Ashley Cheung

@@ -1,11 +1,11 @@
 import { Box, Button } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
-import { useIsDesktop } from "../hooks/useIsDesktop";
+import { useRouter } from "next/router";
+import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { SocialsRow } from "../portfolio/SocialsRow";
 import { PersonalAvatar } from "../utils/PersonalAvatar";
 
 export const BlogFooter = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const isDesktop = useIsDesktop();
   return (
     <Box
@@ -35,7 +35,7 @@ export const BlogFooter = () => {
           Want to checkout my other work?
         </Box>
         <Button
-          onClick={() => navigate("/")}
+          onClick={() => router.push("/")}
           variant={"outline"}
           color={"primary.500"}
         >
