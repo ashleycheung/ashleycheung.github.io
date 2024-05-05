@@ -1,10 +1,21 @@
 import { BlogComponent } from "@/components/blog/Blog";
 import { Blog, BLOGS } from "@/components/blog/blogdata";
-import { GetServerSideProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { redirect } from "next/navigation";
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: BLOGS.map((blog) => ({
+      params: {
+        blogId: blog.id,
+      },
+    })),
+    fallback: true,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
   const blog = BLOGS.find((blog) => blog.id === context.params?.blogId);
   return {
     props: {
