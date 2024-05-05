@@ -18,7 +18,6 @@ const portfolioTheme = extendTheme({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-  console.log("Rendered");
   return (
     <>
       <ChakraProvider theme={portfolioTheme}>
