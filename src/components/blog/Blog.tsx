@@ -45,10 +45,10 @@ export const BlogComponent = ({ blog }: BlogComponentProps) => {
         padding={isDesktop ? 0 : 4}
         paddingBottom={"100px"}
       >
-        {readingTime && markdown ? (
+        {readingTime ? (
           <>
             <BlogHeader blog={blog} readingTime={readingTime} />
-            <MarkdownRender markdown={markdown} />
+            {markdown ? <MarkdownRender markdown={markdown} /> : null}
             <BlogFooter />
           </>
         ) : null}
