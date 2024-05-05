@@ -24,7 +24,9 @@ export default function BlogPage({ blog }: { blog: Blog | undefined }) {
         <title>{blog?.title ?? "Blog"}</title>
         <meta name="description" content={blog.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content={blog.thumbnailSrc} />
+        <meta property="og:type" content="blog" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <main>
         <BlogComponent blog={blog} />
