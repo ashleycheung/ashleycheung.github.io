@@ -1,8 +1,10 @@
+import { promises as fs } from "fs";
 import { BlogComponent } from "@/components/blog/Blog";
 import { Blog, BLOGS } from "@/components/blog/blogdata";
 import { NotFoundPage } from "@/components/utils/NotFoundPage";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import path from "path";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -15,17 +17,30 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const blog = BLOGS.find((blog) => blog.id === context.params?.blogId);
+  let markdown: string | undefined;
+  if (blog) {
+    const blogPath = path.join(process.cwd(), `public`, blog.markdownSrc);
+    markdown = await fs.readFile(blogPath, "utf8");
+  }
+
   return {
     props: {
       blog,
+      markdown,
     },
   };
 };
 
-export default function BlogPage({ blog }: { blog: Blog | undefined }) {
-  if (!blog) {
+export default function BlogPage({
+  blog,
+  markdown,
+}: {
+  blog: Blog | undefined;
+  markdown: string | undefined;
+}) {
+  if (!blog || !markdown) {
     return <NotFoundPage />;
   }
 
@@ -54,7 +69,7 @@ export default function BlogPage({ blog }: { blog: Blog | undefined }) {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <main>
-        <BlogComponent blog={blog} />
+        <BlogComponent blog={blog} markdown={markdown} />
       </main>
     </>
   );

@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { Header } from "../utils/Header";
 import { Blog } from "./blogdata";
@@ -9,31 +9,18 @@ import { BlogFooter } from "./BlogFooter";
 
 interface BlogComponentProps {
   blog: Blog;
+  markdown: string;
 }
 
-export const BlogComponent = ({ blog }: BlogComponentProps) => {
+export const BlogComponent = ({ blog, markdown }: BlogComponentProps) => {
   const isDesktop = useIsDesktop();
 
-  const [markdown, setMarkdown] = useState<null | string>(null);
-
-  // Load blog
-  useEffect(() => {
-    (async () => {
-      const resp = await fetch(blog.markdownSrc);
-      const text = await resp.text();
-      setMarkdown(text);
-    })();
-  }, [blog]);
-
   const wordCount = useMemo(
-    () => markdown?.split(" ").filter((i) => i.trim().length !== 0).length,
+    () => markdown.split(" ").filter((i) => i.trim().length !== 0).length,
     [markdown]
   );
 
-  const readingTime = useMemo(
-    () => (wordCount ? Math.ceil(wordCount / 238) : null),
-    [wordCount]
-  );
+  const readingTime = useMemo(() => Math.ceil(wordCount / 238), [wordCount]);
 
   return (
     <Box display={"flex"} flexDir={"column"} alignItems={"center"}>
@@ -45,13 +32,9 @@ export const BlogComponent = ({ blog }: BlogComponentProps) => {
         padding={isDesktop ? 0 : 4}
         paddingBottom={"100px"}
       >
-        {readingTime ? (
-          <>
-            <BlogHeader blog={blog} readingTime={readingTime} />
-            {markdown ? <MarkdownRender markdown={markdown} /> : null}
-            <BlogFooter />
-          </>
-        ) : null}
+        <BlogHeader blog={blog} readingTime={readingTime} />
+        {markdown ? <MarkdownRender markdown={markdown} /> : null}
+        <BlogFooter />
       </Box>
     </Box>
   );
