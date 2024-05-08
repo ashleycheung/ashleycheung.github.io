@@ -25,6 +25,7 @@ const timelineData: TimelineProps["data"] = [
       TechLogoType.MySql,
       TechLogoType.Php,
       TechLogoType.Python,
+      TechLogoType.Go,
     ],
   },
   {

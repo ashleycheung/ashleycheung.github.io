@@ -1,13 +1,13 @@
-import { Box } from "@chakra-ui/react";
+import { Box, BoxProps } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { Blog } from "../blog/blogdata";
 import { PersonalAvatar } from "../utils/PersonalAvatar";
 
-interface BlogCardProps {
+interface BlogCardProps extends BoxProps {
   blog: Blog;
 }
 
-export const BlogCard = ({ blog }: BlogCardProps) => {
+export const BlogCard = ({ blog, ...props }: BlogCardProps) => {
   const router = useRouter();
   return (
     <Box
@@ -17,10 +17,11 @@ export const BlogCard = ({ blog }: BlogCardProps) => {
       overflow={"hidden"}
       cursor={"pointer"}
       onClick={() => router.push(`/blog/${blog.id}`)}
+      {...props}
     >
       <img
         src={blog.thumbnailSrc}
-        style={{ width: "100%", objectFit: "contain" }}
+        style={{ width: "100%", objectFit: "cover", height: "300px" }}
         alt={"blog"}
         width={300}
         height={300}

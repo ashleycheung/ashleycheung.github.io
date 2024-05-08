@@ -28,6 +28,14 @@ export interface Blog {
  */
 export const BLOGS: Blog[] = [
   {
+    id: "migrating-from-cra-to-next",
+    markdownSrc: "/markdown/cra-to-next.md",
+    title: "Why SEO made me migrate to NextJS",
+    description: "My journey of moving my personal website from CRA to Next.js",
+    date: "May 6, 2024",
+    thumbnailSrc: "/blog-assets/nextjs.png",
+  },
+  {
     id: "building-a-plugin-system-in-javascript",
     markdownSrc: "/markdown/plugin.md",
     title: "How I built a plugin system using Javascript",
