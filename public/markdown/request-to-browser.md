@@ -54,7 +54,7 @@ There also exists this cache on your ISP in order to speed up DNS requests if ma
 
 ## Cache - a double edged sword
 
-Whilst caching urls to ip addresses definitely speeds up the DNS lookup process - it's mean that if were to chain the domain name to point to a new server, the cache stored on people's machines or in ISP's would still be the old one.
+Whilst caching urls to ip addresses definitely speeds up the DNS lookup process - it's mean that if were to change the domain name to point to a new server, the cache stored on people's machines or in ISP's would still be the old one.
 
 This would mean we would have to wait for the cache to expire before our new changes are updated. And so that's why updating domain names can take up to 48 hours to take effect.
 
