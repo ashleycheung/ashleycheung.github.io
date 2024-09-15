@@ -33,7 +33,13 @@ export const Timeline = ({ data }: TimelineProps) => {
             position={"relative"}
           >
             <Box width={iconSize} height={iconSize} padding={4} display="flex">
-              <img width="100%" height="100%" src={d.logo.src} alt="logo" />
+              <img
+                width="100%"
+                height="100%"
+                src={d.logo.src}
+                alt="logo"
+                style={{ objectFit: "contain" }}
+              />
             </Box>
             <Box
               position={"absolute"}

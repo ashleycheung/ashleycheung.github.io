@@ -1,6 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import { Timeline, TimelineProps } from "./Timeline";
 import freelancerLogo from "/public/assets/freelancer.png";
+import tiktokLogo from "/public/assets/tiktok.png";
 import unswLogo from "/public/assets/unsw.jpg";
 import baulkoLogo from "/public/assets/baulko.png";
 import { TechLogoType } from "./TechLogo";
@@ -8,11 +9,19 @@ import { useIsDesktop } from "../../hooks/useIsDesktop";
 
 const timelineData: TimelineProps["data"] = [
   {
+    logo: tiktokLogo,
+    title: "Software Engineer",
+    location: "TikTok",
+    locationUrl: "https://www.tiktok.com",
+    date: "August 2024 - PRESENT",
+    description: [],
+  },
+  {
     logo: freelancerLogo,
     title: "Junior Software Engineer",
     location: "Freelancer.com",
     locationUrl: "https://www.freelancer.com.au/",
-    date: "March 2023 - PRESENT",
+    date: "March 2023 - July 2024",
     description: [
       "Implemented dynamic frontend components using Angular",
       "Took charge in migrating the twilio-sdk of the Angular Webapp to the zoom-sdk",
