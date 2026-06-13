@@ -1,7 +1,7 @@
-import { Box } from "@chakra-ui/react";
+import { Box, BoxProps } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
-interface TypewriterProps {
+interface TypewriterProps extends BoxProps {
   content: string;
   duration: number;
   delay?: number;
@@ -17,6 +17,7 @@ export const Typewriter = ({
   delay,
   fontWeight,
   fontSize,
+  ...props
 }: TypewriterProps) => {
   const [displayedNum, setDisplayedNum] = useState(0);
   const [delayTimeLeft, setDelayTimeLeft] = useState(delay ?? 0);
@@ -54,6 +55,7 @@ export const Typewriter = ({
       fontSize={fontSize}
       textAlign="center"
       fontWeight={fontWeight}
+      {...props}
     >
       {content.slice(0, displayedNum)}
     </Box>

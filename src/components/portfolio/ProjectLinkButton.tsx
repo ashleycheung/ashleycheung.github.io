@@ -10,6 +10,7 @@ export const ProjectLinkButton = ({ url }: ProjectLinkButtonProps) => {
     <Button
       marginBottom={4}
       onClick={() => window.open(url, "_blank")?.focus()}
+      variant={"outline"}
     >
       <Box marginRight={2}>Check it out here</Box>
       <BiLinkExternal />

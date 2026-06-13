@@ -1,14 +1,14 @@
 import { LightMode } from "@chakra-ui/react";
 import { BlogsSection } from "./BlogsSection";
 import { ContactSection } from "./ContactSection";
-import { LandingSection } from "./LandingSection";
 import { MyJourneySection } from "./MyJourneySection";
 import { ProjectsSection } from "./ProjectsSection";
+import { HeroSection } from "./HeroSection";
 
 export const Portfolio = () => {
   return (
     <LightMode>
-      <LandingSection />
+      <HeroSection />
       <MyJourneySection />
       <ProjectsSection />
       <BlogsSection />

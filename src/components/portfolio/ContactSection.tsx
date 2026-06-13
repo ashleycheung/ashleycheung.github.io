@@ -1,4 +1,4 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 import { SocialsRow } from "./SocialsRow";
 import { FaCross } from "react-icons/fa";
 import { useIsDesktop } from "../../hooks/useIsDesktop";
@@ -23,9 +23,14 @@ export const ContactSection = () => {
         alignItems={"center"}
         padding={!isDesktop ? 4 : 8}
       >
-        <Heading fontSize={"xx-large"} marginBottom={4}>
+        <Text
+          marginBottom={4}
+          fontSize={isDesktop ? "4rem" : "3rem"}
+          fontFamily={"SuperPencil, sans-serif"}
+          letterSpacing={4}
+        >
           Want to get in touch?
-        </Heading>
+        </Text>
         <Heading
           fontSize={isDesktop ? "xxx-large" : "x-large"}
           marginBottom={4}

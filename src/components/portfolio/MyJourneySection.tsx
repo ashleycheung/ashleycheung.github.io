@@ -24,25 +24,26 @@ const timelineData: TimelineProps["data"] = [
       </>,
       <>
         <Bold>Led frontend development</Bold> of the Vault Dawn & Dusk campaign,
-        increasing gift revenue by 12.1%
+        <Italics>increasing gift revenue by 12.1%</Italics>{" "}
       </>,
       <>
-        Technical owner of Caishen, an internal configuration platform serving
-        multiple business lines, which reduced bug count by 40% and cut
-        configuration time from 2 days to 1 hour
+        <Bold>Technical owner of Caishen</Bold>, an internal configuration
+        platform serving multiple business lines, which reduced bug count by 40%
+        and cut configuration time from 2 days to 1 hour
       </>,
       <>
-        Built a no-code drag-and-drop editor enabling cross-functional teams to
-        configure pages independently, saving 3 days of frontend and 2 days of
-        server manpower per Vault cycle
+        <Bold>Built a no-code drag-and-drop</Bold> editor enabling
+        cross-functional teams to configure pages independently, saving 3 days
+        of frontend and 2 days of server manpower per Vault cycle
       </>,
       <>
-        Automated daily Vault operational monitoring, saving 1 day of manual
-        intervention per Vault open
+        <Bold>Automated daily Vault operational monitoring</Bold> , saving 1 day
+        of manual intervention per Vault open
       </>,
       <>
-        Engineered an MCP server for the Caishen platform, enabling AI agent
-        integrations and unlocking natural language access to internal tooling
+        <Bold>Engineered an MCP server</Bold> for the Caishen platform, enabling
+        AI agent integrations and unlocking natural language access to internal
+        tooling
       </>,
     ],
   },
@@ -134,8 +135,9 @@ export const MyJourneySection = () => {
         padding={!isDesktop ? 4 : 8}
       >
         <Text
-          fontSize={isDesktop ? "5xl" : "4xl"}
-          fontWeight={"bold"}
+          fontSize={isDesktop ? "4rem" : "3rem"}
+          fontFamily={"SuperPencil, sans-serif"}
+          letterSpacing={4}
           marginBottom={4}
           width={"100%"}
         >

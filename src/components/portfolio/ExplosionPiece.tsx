@@ -25,7 +25,12 @@ export const ExplosionPiece = ({
       animate={explode ? { x, y, rotate } : { x: 0, y: 0, rotate: 0 }}
       transition={{ type: "spring" }}
     >
-      <Box width={size} opacity={explode ? 1 : 0} {...boxProps}>
+      <Box
+        width={size}
+        opacity={explode ? 1 : 0}
+        transition={"opacity 0.3s"}
+        {...boxProps}
+      >
         <img src={imgSrc} width={"100%"} alt="explosion piece" />
       </Box>
     </motion.div>

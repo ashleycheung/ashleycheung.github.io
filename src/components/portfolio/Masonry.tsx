@@ -15,6 +15,7 @@ import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { Project, PROJECTDATA } from "./projectdata";
 import { SelectedProject } from "./SelectedProject";
 import { TechnologyList } from "./TechnologyList";
+import { polaroidBorder, polaroidBoxShadow } from "@/pages/_app";
 
 interface MasonryProps {
   columns: number;
@@ -62,7 +63,8 @@ export const Masonry = ({ columns, gap }: MasonryProps) => {
               .filter((_, projectNum) => projectNum % columns === i)
               .map((project, j) => (
                 <Box
-                  className="boxShadow"
+                  border={polaroidBorder}
+                  boxShadow={polaroidBoxShadow}
                   cursor={"pointer"}
                   borderRadius={"md"}
                   overflow="hidden"

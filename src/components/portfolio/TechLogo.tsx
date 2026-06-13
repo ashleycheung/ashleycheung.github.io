@@ -23,6 +23,8 @@ import cppImg from "/public/assets/cplusplus.svg";
 import goImg from "/public/assets/go.svg";
 import sqliteImg from "/public/assets/sqlite.svg";
 import typescriptImg from "/public/assets/typescript.svg";
+import appStoreImg from "/public/assets/appstore.svg";
+import googleImg from "/public/assets/googleplay.svg";
 import { Image } from "@chakra-ui/react";
 import { StaticImageData } from "next/image";
 
@@ -32,6 +34,8 @@ interface TechLogoProps {
 }
 
 export enum TechLogoType {
+  AppStore = "AppStore",
+  GooglePlay = "GooglePlay",
   React = "React",
   Javascript = "Javascript",
   NodeJS = "NodeJS",
@@ -62,6 +66,12 @@ export enum TechLogoType {
 export const TechLogo = ({ name, maxHeight }: TechLogoProps) => {
   const getSrc = (): StaticImageData => {
     switch (name) {
+      case TechLogoType.AppStore: {
+        return appStoreImg;
+      }
+      case TechLogoType.GooglePlay: {
+        return googleImg;
+      }
       case TechLogoType.React:
         return reactImg;
       case TechLogoType.Javascript:

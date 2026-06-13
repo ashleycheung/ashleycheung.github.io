@@ -1,10 +1,9 @@
-import { Box, Link, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
+import { Box, Link, Text } from "@chakra-ui/react";
 import { TechLogoType } from "./TechLogo";
 import { TechnologyList } from "./TechnologyList";
-import { BsCheckCircle } from "react-icons/bs";
-import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
+import { RiClaudeLine } from "react-icons/ri";
 
 export interface TimelineProps {
   data: {
@@ -20,8 +19,6 @@ export interface TimelineProps {
 
 export const Timeline = ({ data }: TimelineProps) => {
   const iconSize = "75px";
-
-  const isDesktop = useIsDesktop();
 
   return (
     <Box maxWidth="768px">
@@ -54,7 +51,12 @@ export const Timeline = ({ data }: TimelineProps) => {
           <Box paddingTop={4} paddingBottom={i !== data.length - 1 ? 8 : 0}>
             <Text fontSize={"2xl"} fontWeight={"bold"}>
               {d.title}
-              <Link color={"primary.500"} href={d.locationUrl} isExternal>
+              <Link
+                color={"primary.500"}
+                href={d.locationUrl}
+                fontFamily={"sans-serif"}
+                isExternal
+              >
                 {" "}
                 @ {d.location}
               </Link>
@@ -62,7 +64,21 @@ export const Timeline = ({ data }: TimelineProps) => {
             <Text color={"gray.600"}>{d.date}</Text>
             <Box display={"flex"} flexDir={"column"}>
               {d.description.map((d, i) => (
-                <Box key={i} marginTop={2}>
+                <Box
+                  key={i}
+                  marginTop={4}
+                  position={"relative"}
+                  paddingLeft={"20px"}
+                >
+                  <Box
+                    position={"absolute"}
+                    left={0}
+                    top={"12.5px"}
+                    transform={"translateY(-50%) scale(1.2)"}
+                    opacity={0.8}
+                  >
+                    <RiClaudeLine size={15} />
+                  </Box>
                   {d}
                 </Box>
               ))}

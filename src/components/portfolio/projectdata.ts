@@ -19,6 +19,7 @@ import tribeGameshowImg from "/public/assets/tribe-gameshow.png";
 import tribeCampImg from "/public/assets/tribe-camp.png";
 import realmforgeImg from "/public/assets/realmforge.png";
 import { StaticImageData } from "next/image";
+import bibleByHeartImg from "/public/assets/biblebyheart.png";
 
 export type Project = {
   title: string;
@@ -35,19 +36,33 @@ export type PortfolioProjects = {
 
 export const PROJECTDATA: PortfolioProjects = {
   featuredProject: {
-    title: "Realmforge 3D Editor",
-    desc: `A browser based 3D editor for creating stunning worlds.
-      `,
-    thumbnailSrc: realmforgeImg,
-    projectSrc: "https://realmforge.vercel.app/",
+    title: "BibleByHeart",
+    desc: `A duolingo inspired scripture memory app.`,
+    thumbnailSrc: bibleByHeartImg,
+    projectSrc: "https://biblebyheart.org/",
     technologies: [
+      TechLogoType.AppStore,
+      TechLogoType.GooglePlay,
       TechLogoType.Typescript,
-      TechLogoType.ThreeJS,
       TechLogoType.React,
+      TechLogoType.Sqlite,
+      TechLogoType.NodeJS,
     ],
   },
 
   projects: [
+    {
+      title: "Realmforge 3D Editor",
+      desc: `A browser based 3D editor for creating stunning worlds.
+      `,
+      thumbnailSrc: realmforgeImg,
+      projectSrc: "https://realmforge.vercel.app/",
+      technologies: [
+        TechLogoType.Typescript,
+        TechLogoType.ThreeJS,
+        TechLogoType.React,
+      ],
+    },
     {
       title: "Doggo Run",
       desc: `A web browser game made for mobile.

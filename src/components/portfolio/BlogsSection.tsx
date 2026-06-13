@@ -9,8 +9,9 @@ export const BlogsSection = () => {
     <Box display={"flex"} justifyContent="center" paddingTop={32}>
       <Box maxW="1280px" padding={!isDesktop ? 4 : 8} width={"100%"}>
         <Text
-          fontSize={isDesktop ? "5xl" : "4xl"}
-          fontWeight={"bold"}
+          fontSize={isDesktop ? "4rem" : "3rem"}
+          fontFamily={"SuperPencil, sans-serif"}
+          letterSpacing={4}
           marginBottom={4}
           width={"100%"}
         >

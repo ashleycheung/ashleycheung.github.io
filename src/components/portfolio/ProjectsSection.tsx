@@ -24,8 +24,9 @@ export const ProjectsSection = () => {
         >
           <Box width={!isDesktop ? "100%" : "50%"} paddingRight={4}>
             <Text
-              fontSize={isDesktop ? "5xl" : "4xl"}
-              fontWeight={"bold"}
+              fontSize={isDesktop ? "4rem" : "3rem"}
+              fontFamily={"SuperPencil, sans-serif"}
+              letterSpacing={4}
               marginBottom={4}
               width={"100%"}
             >
