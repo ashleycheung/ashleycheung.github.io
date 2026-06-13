@@ -4,6 +4,7 @@ import { TechnologyList } from "./TechnologyList";
 import { BsCheckCircle } from "react-icons/bs";
 import { useIsDesktop } from "../../hooks/useIsDesktop";
 import { StaticImageData } from "next/image";
+import { ReactNode } from "react";
 
 export interface TimelineProps {
   data: {
@@ -12,7 +13,7 @@ export interface TimelineProps {
     location: string;
     locationUrl: string;
     date: string;
-    description: string[];
+    description: ReactNode[];
     technologies?: TechLogoType[];
   }[];
 }
@@ -59,13 +60,13 @@ export const Timeline = ({ data }: TimelineProps) => {
               </Link>
             </Text>
             <Text color={"gray.600"}>{d.date}</Text>
-            <List spacing={isDesktop ? undefined : 2}>
-              {d.description.map((d) => (
-                <ListItem key={d}>
-                  <ListIcon as={BsCheckCircle} /> {d}
-                </ListItem>
+            <Box display={"flex"} flexDir={"column"}>
+              {d.description.map((d, i) => (
+                <Box key={i} marginTop={2}>
+                  {d}
+                </Box>
               ))}
-            </List>
+            </Box>
             {d.technologies ? (
               <>
                 <Text color={"gray.600"} marginTop={4}>

@@ -6,6 +6,8 @@ import unswLogo from "/public/assets/unsw.jpg";
 import baulkoLogo from "/public/assets/baulko.png";
 import { TechLogoType } from "./TechLogo";
 import { useIsDesktop } from "../../hooks/useIsDesktop";
+import { Bold } from "../utils/Bold";
+import { Italics } from "../utils/Italics";
 
 const timelineData: TimelineProps["data"] = [
   {
@@ -14,7 +16,35 @@ const timelineData: TimelineProps["data"] = [
     location: "TikTok",
     locationUrl: "https://www.tiktok.com",
     date: "August 2024 - PRESENT",
-    description: [],
+    description: [
+      <>
+        <Bold>Frontend technical owner</Bold> of the TikTok LIVE Vault Gift
+        series, a premium gifting product contributing{" "}
+        <Italics>5–10% of platform gifting revenue</Italics>
+      </>,
+      <>
+        <Bold>Led frontend development</Bold> of the Vault Dawn & Dusk campaign,
+        increasing gift revenue by 12.1%
+      </>,
+      <>
+        Technical owner of Caishen, an internal configuration platform serving
+        multiple business lines, which reduced bug count by 40% and cut
+        configuration time from 2 days to 1 hour
+      </>,
+      <>
+        Built a no-code drag-and-drop editor enabling cross-functional teams to
+        configure pages independently, saving 3 days of frontend and 2 days of
+        server manpower per Vault cycle
+      </>,
+      <>
+        Automated daily Vault operational monitoring, saving 1 day of manual
+        intervention per Vault open
+      </>,
+      <>
+        Engineered an MCP server for the Caishen platform, enabling AI agent
+        integrations and unlocking natural language access to internal tooling
+      </>,
+    ],
   },
   {
     logo: freelancerLogo,

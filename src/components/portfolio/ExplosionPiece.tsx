@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, BoxProps } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 interface ExplosionPieceProps {
@@ -8,6 +8,7 @@ interface ExplosionPieceProps {
   rotate: number;
   size: string;
   explode: boolean;
+  boxProps?: BoxProps;
 }
 
 export const ExplosionPiece = ({
@@ -17,13 +18,14 @@ export const ExplosionPiece = ({
   rotate,
   size,
   explode,
+  boxProps,
 }: ExplosionPieceProps) => {
   return (
     <motion.div
       animate={explode ? { x, y, rotate } : { x: 0, y: 0, rotate: 0 }}
       transition={{ type: "spring" }}
     >
-      <Box width={size} opacity={explode ? 1 : 0}>
+      <Box width={size} opacity={explode ? 1 : 0} {...boxProps}>
         <img src={imgSrc} width={"100%"} alt="explosion piece" />
       </Box>
     </motion.div>

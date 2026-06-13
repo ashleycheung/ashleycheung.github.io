@@ -1,7 +1,7 @@
 import { Box, Button } from "@chakra-ui/react";
 import { Typewriter } from "./Typewriter";
 import profile from "/public/assets/profile.png";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { scroller } from "react-scroll";
 import { TiSpanner } from "react-icons/ti";
 import { AiFillFlag } from "react-icons/ai";
@@ -19,6 +19,21 @@ export const LandingSection = () => {
   const isDesktop = useIsDesktop();
   const [isGrayed, setIsGrayed] = useState(true);
   const [showButtons, setShowButtons] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    if (!imgRef.current) {
+      return;
+    }
+    if (imgRef.current.complete) {
+      setImgLoaded(true);
+      return;
+    }
+    imgRef.current.onload = () => {
+      setImgLoaded(true);
+    };
+  }, []);
 
   // Scroll to start on load
   useEffect(() => {
@@ -66,16 +81,18 @@ export const LandingSection = () => {
           marginBottom={4}
         >
           <img
+            ref={imgRef}
             style={{
               width: "100%",
               filter: isGrayed
                 ? "blur(6px) grayscale(1)"
                 : "blur(0) grayscale(0)",
-              transition: "filter 0.5s",
+              opacity: imgLoaded ? "1" : "0",
+              transform: isGrayed ? "scale(0.8)" : "scale(1)",
+              transition: "all 0.4s",
             }}
             src={profile.src}
             alt="profile"
-            className="scale-in-center"
           />
         </Box>
         <Box
