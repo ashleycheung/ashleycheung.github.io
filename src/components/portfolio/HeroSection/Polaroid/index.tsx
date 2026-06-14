@@ -31,7 +31,7 @@ export const Polaroid = ({ ...props }: PolaroidProps) => {
   }, [isDesktop]);
 
   return (
-    <Box width={"100%"} height={"100%"} {...props}>
+    <Box width={"100%"} height={"100%"} pointerEvents={"none"} {...props}>
       <Box
         transform={`rotateX(${clientPos.y * 20}deg) rotateY(${
           clientPos.x * 20

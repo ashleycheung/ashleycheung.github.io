@@ -15,7 +15,7 @@ export const Header = ({ show, showLogo }: HeaderProps) => {
   const router = useRouter();
   const onClick = useCallback(() => {
     router.push("/");
-  }, []);
+  }, [router]);
   return (
     <Box
       padding={4}

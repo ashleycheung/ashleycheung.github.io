@@ -24,7 +24,11 @@ export const SocialsRow = () => {
           cursor={"pointer"}
           margin={4}
           key={data.url}
-          onClick={() => window.open(data.url, "_blank")?.focus()}
+          zIndex={999}
+          onClick={() => {
+            console.log("click", data);
+            window.open(data.url, "_blank")?.focus();
+          }}
         >
           {data.component}
         </Box>

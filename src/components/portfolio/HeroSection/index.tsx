@@ -15,6 +15,7 @@ import brushstrokeImg from "/public/assets/brushstroke.png";
 import { scroller } from "react-scroll";
 import { TiSpanner } from "react-icons/ti";
 import { AiFillFlag } from "react-icons/ai";
+import { SocialsRow } from "../SocialsRow";
 
 const SHOW_FIRST_TEXT = 0;
 const EXPLOSION_TIME_MS = SHOW_FIRST_TEXT + 500;
@@ -59,7 +60,7 @@ export const HeroSection = () => {
       alignItems={"center"}
       overflow={"hidden"}
     >
-      <Box position={"absolute"} top={0} left={0} right={0}>
+      <Box position={"absolute"} top={0} left={0} right={0} zIndex={99}>
         <Header show={true} />
       </Box>
       <Box
@@ -70,6 +71,7 @@ export const HeroSection = () => {
       >
         <Box
           position={"absolute"}
+          pointerEvents={"none"}
           {...(isDesktop
             ? {
                 top: "50%",
